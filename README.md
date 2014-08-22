@@ -29,3 +29,23 @@ License
 
 The project is licensed under GPL 3. See [LICENSE](https://raw.githubusercontent.com/brunoborges/fx2048/master/LICENSE)
 file for the full license.
+
+
+**********************************************************************************
+
+*Pr2 Project 2014*
+
+Modifica dell'implementazione del gioco 2048 in modo da permettere, opzionalmente, di giocare autonomamente con un giocatore automatico. 
+
+
+
+
+
+
+
+
+
+
+
+
+
