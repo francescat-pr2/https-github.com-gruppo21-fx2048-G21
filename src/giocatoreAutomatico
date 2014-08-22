@@ -1,4 +1,6 @@
-/* GiocatoreAutomatico.java */
+/* GiocatoreAutomatico.java 
+* Interfaccia giocatoreAutomatico
+*/
 package giocatoreAutomatico;
 
 
