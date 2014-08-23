@@ -39,6 +39,11 @@ Modifica dell'implementazione del gioco 2048 in modo da permettere, opzionalment
 
 
 
+Strumenti utilizzati:
+
+git - distributed version control system
+
+
 
 
 
