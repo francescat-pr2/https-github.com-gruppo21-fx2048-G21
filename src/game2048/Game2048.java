@@ -47,6 +47,7 @@ public class Game2048 extends Application {
     private BooleanProperty booleanProperty = new SimpleBooleanProperty(false);
     Direction dir=Direction.UP;//=null;
 
+//creazione Robot
     Robot rbt2;
     
     @Override
