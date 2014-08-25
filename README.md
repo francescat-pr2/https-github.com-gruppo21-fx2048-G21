@@ -39,7 +39,13 @@ button per attivare il giocatore automatico e conseguente azione che crea un Thr
 chiamata al metodo del giocatoreAutomatico prossimaMossa che restituisce un int random da 0 a 3, switch nel valore int con conseguente creazione di un valore Direction che viene passato al metodo move() del GameManager che si occupa di gestire tutto il procedimento del movimento di una casella e le sue conseguenze. 
 Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere H e ogni volta l'ascoltatore intercetta l evento permettendo l esecuzione del gioco in autonomia.
 
-
+myGriglia e my giocatoreAutomatico sono le clessi che implementano le interfacce.
+modifiche aggiunta del package giocatore automatico perchè dovervo mettere le interfacce
+in tutto il progetto le modifiche fatte ascoltatore di eventi e un tread 
+partendo dall'ascoltatore degli eventi ascolta quando viene fatto la pressione del tasto h e una volta che viene fatto questo richiama il metodo prossima mossa.è l'ascoltatore 
+robot va in tred che viene mandato in esecuzione viene fatto in altro progetto che viene fatto in maniera sincronizzata.
+il processo principale è l'interfaccia grafica in se 
+lavora con l'altro tred in autonomia in modo parallelo.
 
 
 
