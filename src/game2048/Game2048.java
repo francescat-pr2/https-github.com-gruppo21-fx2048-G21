@@ -42,6 +42,12 @@ public class Game2048 extends Application {
     private Bounds gameBounds;
     private GiocatoreAutomatico myPlayer;
     
+    
+    private BooleanProperty booleanProperty = new SimpleBooleanProperty(false);
+    Direction dir=Direction.UP;//=null;
+
+    Robot rbt2;
+    
     @Override
     public void start(Stage primaryStage) {
         gameManager = new GameManager();
