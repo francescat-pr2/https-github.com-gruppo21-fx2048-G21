@@ -55,10 +55,10 @@ public class Game2048 extends Application {
         gameManager = new GameManager();
         gameBounds = gameManager.getLayoutBounds();
         
-        //if(GiocatoreAutomatico.getGiocatoreAutomatico()==null)
-        //    myPlayer = new MyGiocatoreAutomatico();
+       
         myPlayer = GiocatoreAutomatico.getGiocatoreAutomatico();
         
+        //oggeto button per 'attivare' il giocatore automatico
         Button button2 = new Button("Giocatore Automatico");
         
         StackPane root = new StackPane(gameManager);
