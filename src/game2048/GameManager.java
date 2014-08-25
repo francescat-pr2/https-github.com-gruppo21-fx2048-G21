@@ -53,7 +53,7 @@ public class GameManager extends Group {
     private static final int GRID_WIDTH = CELL_SIZE * DEFAULT_GRID_SIZE + BORDER_WIDTH * 2;
     private static final int TOP_HEIGHT = 92;
 
-    private volatile boolean movingTiles = false;
+        private volatile boolean movingTiles = false;
     private final int gridSize;
     private final List<Integer> traversalX;
     private final List<Integer> traversalY;
@@ -66,11 +66,11 @@ public class GameManager extends Group {
     private final Set<Tile> mergedToBeRemoved = new HashSet<>();
     private final ParallelTransition parallelTransition = new ParallelTransition();
     private final BooleanProperty layerOnProperty = new SimpleBooleanProperty(false);
-
-    // User Interface controls
-    private final VBox vGame = new VBox(50);
-    private final Group gridGroup = new Group();
-
+    
+    //variabili pubbliche per permettere la lettura diretta
+    final MyGriglia myGriglia;
+    boolean gameOver=false;
+    boolean gameWon=false;
     private final HBox hTop = new HBox(0);
     private final Label lblScore = new Label("0");
     private final Label lblPoints = new Label();
