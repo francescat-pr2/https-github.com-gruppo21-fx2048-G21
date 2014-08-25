@@ -1,16 +1,37 @@
 package game2048;
 
+import com.sun.glass.events.KeyEvent;
+import com.sun.javafx.robot.FXRobot;
+import com.sun.javafx.robot.FXRobotFactory;
+import giocatoreAutomatico.GiocatoreAutomatico;
+import giocatoreAutomatico.player.MyGiocatoreAutomatico;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.ActionListener;
+import static java.awt.event.InputEvent.BUTTON1_MASK;
+import java.util.TimerTask;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.application.ConditionalFeature;
 import javafx.application.Platform;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Bounds;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.input.InputEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javax.swing.Timer;
 
 /**
  * @author bruno.borges@oracle.com
