@@ -40,7 +40,8 @@ public class Game2048 extends Application {
 
     private GameManager gameManager;
     private Bounds gameBounds;
-
+    private GiocatoreAutomatico myPlayer;
+    
     @Override
     public void start(Stage primaryStage) {
         gameManager = new GameManager();
