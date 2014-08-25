@@ -85,6 +85,14 @@ public class Game2048 extends Application {
         }
 
         primaryStage.setTitle("2048FX");
+        
+         //allineamento e aggiunta del button nella finestra
+        button2.setTranslateX(10);
+        button2.setTranslateY(100);
+        root.setAlignment(button2,Pos.TOP_CENTER);
+        root.getChildren().add(button2);
+        
+        
         primaryStage.setScene(scene);
         primaryStage.setMinWidth(gameBounds.getWidth());
         primaryStage.setMinHeight(gameBounds.getHeight());
