@@ -30,7 +30,7 @@ Modifiche effettuate:
 -aggiunta del package giocatoreAutomatico (e giocatoreAutomatico.player);
 -aggiunta delle classi implementate dalle interfacce.
 
-aggiunta di 3 variabili in GameManager -> boolean: gameOver e gameWon pubbliche e Griglia: myGriglia che viene aggiornata in base alla situazione del gioco
+ myGriglia che viene aggiornata in base alla situazione del gioco
 
 
 aggiunta di variabili , ascoltatore e Thread in Game2048 -> 
