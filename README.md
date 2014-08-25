@@ -18,7 +18,7 @@ git - distributed version control system
 
 *Game2048.java*
 classe contenente il main e il metodo start.
-Implementa le funzioni e le variabili che si occupano di inizializzare e gestire l interfaccia grafica,
+Implementa le funzioni e le variabili che si occupano di inizializzare e gestire l'interfaccia grafica,
 da qui viene inizializzato anche un oggetto di tipo GameManager che si occupa di tutte le funzioni di gestione del gioco: 
 -i meccanismi di somma e spostamento delle caselle, 
 -aggiornamento della griglia (a livello grafico), 
@@ -28,7 +28,7 @@ da qui viene inizializzato anche un oggetto di tipo GameManager che si occupa di
 
 Modifiche effettuate:
 -aggiunta del package giocatoreAutomatico (e giocatoreAutomatico.player);
--aggiunta delle classi implementate dalle interfacce.
+-aggiunta delle classi implementate dalle interfacce.  //implementazione delle classi dichiarate nelle interfacce
 
  myGriglia che viene aggiornata in base alla situazione del gioco
 
