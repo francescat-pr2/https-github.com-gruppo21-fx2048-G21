@@ -2,8 +2,6 @@ package game2048;
 
 import static java.awt.event.InputEvent.BUTTON1_MASK;
 import com.sun.glass.events.KeyEvent;
-import com.sun.javafx.robot.FXRobot;
-import com.sun.javafx.robot.FXRobotFactory;
 import giocatoreAutomatico.GiocatoreAutomatico;
 import giocatoreAutomatico.player.MyGiocatoreAutomatico;
 import java.awt.AWTException;
