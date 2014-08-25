@@ -16,3 +16,6 @@ import java.util.logging.Logger;
  * @author Francesca Trudu
  * @author Nadia Jolanda Fulgheri
  */
+
+public class MyGiocatoreAutomatico implements GiocatoreAutomatico{
+}
