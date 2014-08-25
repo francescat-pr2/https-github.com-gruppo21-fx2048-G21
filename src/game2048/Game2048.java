@@ -1,5 +1,6 @@
 package game2048;
 
+import static java.awt.event.InputEvent.BUTTON1_MASK;
 import com.sun.glass.events.KeyEvent;
 import com.sun.javafx.robot.FXRobot;
 import com.sun.javafx.robot.FXRobotFactory;
@@ -8,7 +9,6 @@ import giocatoreAutomatico.player.MyGiocatoreAutomatico;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.ActionListener;
-import static java.awt.event.InputEvent.BUTTON1_MASK;
 import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,6 +32,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javax.swing.Timer;
+
 
 /**
  * @author bruno.borges@oracle.com
