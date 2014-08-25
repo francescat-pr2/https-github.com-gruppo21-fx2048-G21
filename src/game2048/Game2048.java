@@ -187,7 +187,50 @@ public class Game2048 extends Application {
         scene.setOnSwipeLeft(e -> gameManager.move(Direction.LEFT));
         scene.setOnSwipeDown(e -> gameManager.move(Direction.DOWN));
     }
+    
+    
+    //ascoltatore dell evento button Giocatore Automatico cliccato
+    private void addBtnClicked(Scene scene) {
+        
+        //implementazione delle azione svolte quando viene cliccato il tasto H
+        scene.setOnKeyPressed(ke -> {
+            KeyCode keyCode = ke.getCode();
+            if (keyCode.equals(KeyCode.H)) {
+                
+                int pross;
+                Direction direction=null;
+          
+                //valore int restituito dal metodo del Giocatore Automatico per la mossa da eseguire
+                pross = myPlayer.prossimaMossa(gameManager.myGriglia);
+                
+                //ad ogni valore tra 0 e 3 viene assegnata la direzione della mossa
+                switch(pross){
+                    case 0: direction = Direction.UP;
+                        //gameManager.move(Direction.UP);
+                        System.out.println("mossa "+ pross);
+                        break;
+                    case 1: direction = Direction.RIGHT;
+                        //gameManager.move(Direction.RIGHT);
+                        System.out.println("mossa "+ pross);
+                        break;
+                    case 2: direction = Direction.DOWN;
+                        //gameManager.move(Direction.DOWN);
+                        System.out.println("mossa "+ pross);
+                        break;
+                    case 3: direction = Direction.LEFT;
+                        //gameManager.move(Direction.LEFT);
+                        System.out.println("mossa "+ pross);
+                        break;
+                }
+                //viene richiamato il metodo move per eseguire la mossa in base alla direzione
+                //restituita
+                gameManager.move(direction);
+                //System.out.println(gameManager);
+                //System.out.println(gameManager.gameOver);
+            }});
 
+    }
+    
     /**
      * @param args the command line arguments
      */
