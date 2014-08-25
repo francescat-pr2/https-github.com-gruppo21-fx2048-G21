@@ -2,6 +2,15 @@
 package giocatoreAutomatico;
 
 
+
+
+/*GiocatoreAutomatico:
+*permettere che il gioco sia "disaccoppiato" dal giocatore automatico, e che quindi funzioni anche con giocatori automatici di  grupp
+*implementare l'interfaccia giocatoreAutomatico.GiocatoreAutomatico:
+*
+*
+*/
+
 public interface GiocatoreAutomatico {
 
     /** restituisce un oggetto GiocatoreAutomatico su cui si potrà chiedere che mosse fare.  
