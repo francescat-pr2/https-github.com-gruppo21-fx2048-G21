@@ -101,6 +101,65 @@ public class Game2048 extends Application {
 
     private boolean isARMDevice() {
         return System.getProperty("os.arch").toUpperCase().contains("ARM");
+        
+        
+         //creazione dell oggtto robot che andrà a simulare la pressione di un tasto
+        try {
+                rbt2=new Robot();
+        }catch (AWTException ex) {
+                   Logger.getLogger(Game2048.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+       //azione che viene svolta alla pressione del button 'Giocatore Automatico'
+       button2.setOnAction((ActionEvent event) -> {
+           //istanzia un nuovo Thread 
+          Thread t=new Thread(new Runnable() {
+              //implementa le azioni che si svolgono nel nuovo thread
+              @Override
+              public void run() {
+                  //boolean di controllo per il ciclo while 
+                  boolean cnt=gameManager.gameOver;
+                  //al game over del gioco l esecuzione del thread viene terminata
+                  while(!cnt)
+                  
+                  try {
+                        //se la finestra del gioco viene chiusa prima del game over
+                        //il valore boolean di controllo del while cambia permettendo 
+                        //di terminare il thread anche in questo caso
+                        if(!primaryStage.isShowing()){
+                             cnt=true;
+                             return;
+                            
+                        }
+                      
+                       //System.out.println("while "+ gameManager.gameOver);
+                        //l oggetto Robot simula la pressione del tasto H che verrà catturato
+                        //dal listener
+                       rbt2.keyPress(KeyEvent.VK_H);
+                       //rilascio del tasto H
+                       rbt2.keyRelease(KeyEvent.VK_H);
+                      
+                      //System.out.println(primaryStage.isShowing());
+                      //il thread rimane in pausa 200 cent di sec
+                      Thread.sleep(200);//mezzo secondo
+                      
+                      
+                  } catch (InterruptedException ex) {
+                      Logger.getLogger(Game2048.class.getName()).log(Level.SEVERE, null, ex);
+                  }
+               
+                 }
+              //}
+          });
+          //il thread viene mandato in esecuzione
+          t.start();
+           
+           
+           
+
+        } );
+                
+    }
     }
 
     private void addKeyHandler(Scene scene) {
