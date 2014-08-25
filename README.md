@@ -7,6 +7,9 @@ fx2048
 *Francesca Trudu* -
 *Fulgheri Nadia Jolanda*
 
+
+
+Scopo del progetto:
 Modifica dell'implementazione del gioco 2048 in modo da permettere, opzionalmente, di giocare autonomamente con un giocatore automatico. 
 
 
@@ -14,6 +17,7 @@ Modifica dell'implementazione del gioco 2048 in modo da permettere, opzionalment
 Strumenti utilizzati:
 
 git - distributed version control system
+
 
 
 *Game2048.java*
@@ -37,7 +41,7 @@ aggiunta di variabili , ascoltatore e Thread in Game2048 ->
 giocatoreAutomatico: viene creato un oggetto giocatoreAutomatico tramite il suo metodo; 
 button per attivare il giocatore automatico e conseguente azione che crea un Thread permettendo di simulare la pressione del tasto H tramite un oggetto di tipo Robot, evento che viene catturato da un ascoltatore apposito addBtnClicked che implementa l'azione da eseguire: 
 chiamata al metodo del giocatoreAutomatico prossimaMossa che restituisce un int random da 0 a 3, switch nel valore int con conseguente creazione di un valore Direction che viene passato al metodo move() del GameManager che si occupa di gestire tutto il procedimento del movimento di una casella e le sue conseguenze. 
-Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere H e ogni volta l'ascoltatore intercetta l evento permettendo l esecuzione del gioco in autonomia.
+Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere h e ogni volta l'ascoltatore intercetta l evento permettendo l esecuzione del gioco in autonomia.
 
 myGriglia e my giocatoreAutomatico sono le clessi che implementano le interfacce.
 modifiche aggiunta del package giocatore automatico perchè dovervo mettere le interfacce
