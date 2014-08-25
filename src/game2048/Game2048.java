@@ -49,10 +49,16 @@ public class Game2048 extends Application {
     Robot rbt2;
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
         gameManager = new GameManager();
         gameBounds = gameManager.getLayoutBounds();
-
+        
+        //if(GiocatoreAutomatico.getGiocatoreAutomatico()==null)
+        //    myPlayer = new MyGiocatoreAutomatico();
+        myPlayer = GiocatoreAutomatico.getGiocatoreAutomatico();
+        
+        Button button2 = new Button("Giocatore Automatico");
+        
         StackPane root = new StackPane(gameManager);
         root.setPrefSize(gameBounds.getWidth(), gameBounds.getHeight());
         ChangeListener<Number> resize = (ov, v, v1) -> {
