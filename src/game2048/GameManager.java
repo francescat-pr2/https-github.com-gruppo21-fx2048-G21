@@ -1,5 +1,6 @@
 package game2048;
 
+import giocatoreAutomatico.player.MyGriglia;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
