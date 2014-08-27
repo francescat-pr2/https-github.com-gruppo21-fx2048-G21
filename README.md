@@ -1,5 +1,5 @@
-fx2048 -Trudu -Fulgheri
-======
+fx2048 -Trudu-Fulgheri
+======================
 
 *Pr2 Project 2014*
 
