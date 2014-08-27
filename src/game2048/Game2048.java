@@ -184,16 +184,19 @@ public class Game2048 extends Application {
         scene.setOnSwipeRight(e -> gameManager.move(Direction.RIGHT));
         scene.setOnSwipeLeft(e -> gameManager.move(Direction.LEFT));
         scene.setOnSwipeDown(e -> gameManager.move(Direction.DOWN));
+        
     }
     
     
+    
+    
     //ascoltatore dell evento button Giocatore Automatico cliccato
-    private void addBtnClicked(Scene scene) {
+    private void addBtnClicked(){//Scene scene) {
         
         //implementazione delle azione svolte quando viene cliccato il tasto H
-        scene.setOnKeyPressed(ke -> {
-            KeyCode keyCode = ke.getCode();
-            if (keyCode.equals(KeyCode.H)) {
+       // scene.setOnKeyPressed(ke -> {
+         // KeyCode keyCode = ke.getCode();
+           // if (keyCode.equals(KeyCode.H)) {
                 
                 int pross;
                 Direction direction=null;
@@ -225,15 +228,4 @@ public class Game2048 extends Application {
                 gameManager.move(direction);
                 //System.out.println(gameManager);
                 //System.out.println(gameManager.gameOver);
-            }});
-
-    }
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-}
+          //  }});
