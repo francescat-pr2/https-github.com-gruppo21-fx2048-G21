@@ -22,9 +22,9 @@ GitHub - distributed version control system <BR>
 
 Modalità di gioco:
 =
-All'avvio del gioco compare una finestra principale attraverso la quale il giocatore può decidere se avviare il gioco manualmente facendo la prima mossa o premendo il pulsante apposito "Giocatore Automatico";
+All'avvio del gioco compare una finestra principale attraverso la quale il giocatore può decidere se avviare il gioco manualmente facendo la prima mossa o premendo il pulsante apposito "Giocatore Automatico".
 Se si di effettua la prima mossa si inizia a giocare in modalità manuale e si prosegue il gioco effettuando una delle quattro mosse possibili con i tasti freccia direzionali.
-Se si preme il pulsante "Giocatore Automatico" il gioco si avvia e si gioca in automatico un intero turno cioè si esegue una sequenza di mosse fino alla fine del gioco, ossia: 
+Se si preme il pulsante "Giocatore Automatico" il gioco si avvia e si gioca in automatico un intero turno cioè si esegue una sequenza consecutiva di mosse fino alla fine del gioco, ossia: 
 -risultato vincente 2048; <BR>
 -game over se non sono disponibili ulteriori mosse.
 
@@ -64,6 +64,7 @@ Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere h
 partendo dall'ascoltatore degli eventi ascolta quando viene fatto la pressione del tasto h e una volta che viene fatto questo richiama il metodo prossima mossa.è l'ascoltatore 
 robot va in tred che viene mandato in esecuzione viene fatto in altro progetto che viene fatto in maniera sincronizzata.
 
+*Game Manager*
 
 
 
