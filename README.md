@@ -16,7 +16,15 @@ Modifica dell'implementazione del gioco 2048 in modo da permettere, opzionalment
 
 Strumenti utilizzati:
 
-git - distributed version control system
+NetBeans -
+GitHub - distributed version control system
+
+
+
+
+All'avvio del gioco compare una finestra principale attraverso la quale il giocatore può deciderse se avviare il gioco manualmente facendo la prima mossa o premendo il pulsante apposito "Giocatore Automatico";
+Se si di effettua la prima mossa si inizia a giocare in modalità manuale e si prosegue il gioco effettuando una delle quattro mosse con i tasti freccia direzionali.
+Se si preme il pulsante "Giocatore Automatico" il gioco si avvia ed esegue una sequenza di mosse fino alla fine, ossia: risultato vincente 2048 o game over se non sono disponibili ulteriori mosse.
 
 
 
