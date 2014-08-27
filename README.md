@@ -1,6 +1,7 @@
 fx2048 -Trudu-Fulgheri
 ======================
 *Pr2 Project 2014*
+=
 
 *Gruppo21 :*<BR>
 *Francesca Trudu matricola 44884*<BR>
@@ -36,21 +37,22 @@ da qui viene inizializzato anche un oggetto di tipo GameManager che si occupa di
 -meccanismi di somma e spostamento delle caselle;<BR>
 -aggiornamento della griglia (a livello grafico);<BR> 
 -aggiornamento dello score;<BR>
--conclusione del gioco in caso di game over e vittoria del gioco.
+-conclusione del gioco in caso di game over o vittoria del gioco.
 
 
 Modifiche effettuate:
+=
 -aggiunta del package giocatoreAutomatico (e giocatoreAutomatico.player);
--aggiunta delle classi implementate dalle interfacce.  //implementazione delle classi dichiarate nelle interfacce
+-aggiunta delle classi implementate dalle interfacce.
+-ascoltatore
+-Thread
 
 myGriglia che viene aggiornata in base alla situazione del gioco
 
 
-aggiunta di variabili , ascoltatore e Thread in Game2048 ->
-
-giocatoreAutomatico: 
+GiocatoreAutomatico: 
 viene creato un oggetto giocatoreAutomatico tramite il suo metodo; 
-button per attivare il giocatore automatico e conseguente azione che crea un Thread permettendo di simulare la pressione del tasto h tramite un oggetto di tipo Robot, evento che viene catturato da un ascoltatore apposito addBtnClicked che implementa l'azione da eseguire:
+button per attivare il giocatore automatico e conseguente azione che crea un Thread permettendo di simulare la pressione del tasto shift tramite un oggetto di tipo Robot, evento che viene catturato da un ascoltatore apposito addBtnClicked che implementa l'azione da eseguire:
 
 chiamata al metodo del giocatoreAutomatico prossimaMossa che restituisce un int random da 0 a 3, switch nel valore int con conseguente creazione di un valore Direction che viene passato al metodo move() del GameManager che si occupa di gestire tutto il procedimento del movimento di una casella e le sue conseguenze. 
 Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere h e ogni volta l'ascoltatore intercetta l evento permettendo l esecuzione del gioco in autonomia.
