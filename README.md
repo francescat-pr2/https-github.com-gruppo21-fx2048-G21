@@ -16,8 +16,8 @@ Modifica dell'implementazione del gioco 2048 in modo da permettere, opzionalment
 
 Strumenti utilizzati:
 
-NetBeans -
-GitHub - distributed version control system
+NetBeans - <BR>
+GitHub - distributed version control system <BR>
 
 
 
