@@ -3,9 +3,9 @@ fx2048 -Trudu -Fulgheri
 
 *Pr2 Project 2014*
 
-*Gruppo21* : 
-*Francesca Trudu* -
-*Fulgheri Nadia Jolanda*
+*Gruppo21 :* 
+*Francesca Trudu matricola 44884* -
+*Fulgheri Nadia Jolanda matricola 39310*
 
 
 
