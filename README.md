@@ -30,6 +30,16 @@ Se si preme il pulsante "Giocatore Automatico" il gioco si avvia e si gioca in a
 
 
 
+*Modifiche effettuate:*
+=====================
+-aggiunta del package giocatoreAutomatico (e giocatoreAutomatico.player);
+-aggiunta delle classi implementate dalle interfacce.
+-ascoltatore di eventi
+-Thread
+
+myGriglia che viene aggiornata in base alla situazione del gioco
+
+
 *Game2048.java*
 
 Implementa le funzioni e le variabili che si occupano di inizializzare e gestire l'interfaccia grafica,
@@ -39,15 +49,6 @@ da qui viene inizializzato anche un oggetto di tipo GameManager che si occupa di
 -aggiornamento dello score;<BR>
 -conclusione del gioco in caso di game over o vittoria del gioco.
 
-
-Modifiche effettuate:
-=
--aggiunta del package giocatoreAutomatico (e giocatoreAutomatico.player);
--aggiunta delle classi implementate dalle interfacce.
--ascoltatore di eventi
--Thread
-
-myGriglia che viene aggiornata in base alla situazione del gioco
 
 
 GiocatoreAutomatico: 
