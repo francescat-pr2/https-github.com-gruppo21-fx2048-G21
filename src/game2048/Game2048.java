@@ -93,7 +93,7 @@ public class Game2048 extends Application {
         primaryStage.show();
         
         
-        //creazione dell oggtto robot che andrà a simulare la pressione di un tasto
+          //creazione dell oggetto robot che andrà a simulare la pressione di un tasto
         try {
                 rbt2=new Robot();
         }catch (AWTException ex) {
@@ -112,7 +112,7 @@ public class Game2048 extends Application {
                   //System.out.println("thread lanciato");
                   //boolean di controllo per il ciclo while 
                   boolean cnt=gameManager.gameOver;
-                  //al game over del gioco l esecuzione del thread viene terminata
+                  //al game over del gioco l'esecuzione del thread viene terminata
                   while(!cnt)
                   
                   try {
@@ -231,8 +231,7 @@ public class Game2048 extends Application {
                         System.out.println("mossa "+ pross);
                         break;
                 }
-                //viene richiamato il metodo move per eseguire la mossa in base alla direzione
-                //restituita
+                //viene richiamato il metodo move per eseguire la mossa in base alla direzione restituita
                 gameManager.move(direction);
                 //System.out.println(gameManager);
                 //System.out.println(gameManager.gameOver);
