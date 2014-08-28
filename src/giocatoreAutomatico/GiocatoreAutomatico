@@ -1,4 +1,3 @@
-/* GiocatoreAutomatico.java */
 package giocatoreAutomatico;
 
 
@@ -8,7 +7,8 @@ package giocatoreAutomatico;
 *permettere che il gioco sia "disaccoppiato" dal giocatore automatico e che funzioni anche con giocatori automatici di altri gruppi;
 *implementare l'interfaccia giocatoreAutomatico.GiocatoreAutomatico:
 *
-*
+*@autor Francesca Trudu
+*@autor Nadia Fulgheri
 */
 
 public interface GiocatoreAutomatico {
