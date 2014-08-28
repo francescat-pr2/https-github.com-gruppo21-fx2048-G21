@@ -32,10 +32,6 @@ Se si preme il pulsante "Giocatore Automatico" il gioco si avvia e si gioca in a
 
 *Modifiche effettuate:*
 =====================
--aggiunta del package giocatoreAutomatico (e giocatoreAutomatico.player);
--aggiunta delle classi implementate dalle interfacce;
--ascoltatore di eventi;
--Thread 
 
 
 
