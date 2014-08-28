@@ -126,11 +126,10 @@ public class Game2048 extends Application {
                       }
                       
                        //System.out.println("while "+ gameManager.gameOver);
-                        //l oggetto Robot simula la pressione del tasto H che verrà catturato
-                        //dal listener
+                        //l'oggetto Robot simula la pressione del tasto SHIFT che verrà catturato dal listener
                        rbt2.keyPress(KeyEvent.VK_SHIFT);
-                      // System.out.println("H premuto");
-                       //rilascio del tasto H
+                      // System.out.println("SHIFT premuto");
+                       //rilascio del tasto SHIFT
                        rbt2.keyRelease(KeyEvent.VK_SHIFT);
                       
                       //System.out.println(primaryStage.isShowing());
@@ -149,7 +148,7 @@ public class Game2048 extends Application {
           t.start();
            
            
-          
+           
 
         } );
         
@@ -165,7 +164,7 @@ public class Game2048 extends Application {
         scene.setOnKeyPressed(ke -> {
             KeyCode keyCode = ke.getCode();
             if (keyCode.equals(KeyCode.SHIFT)) {
-               // System.out.println("h catturato");
+               // System.out.println("SHIFT catturato");
                 addBtnClicked();
                 return;
             }
@@ -202,10 +201,10 @@ public class Game2048 extends Application {
     //ascoltatore dell evento button Giocatore Automatico cliccato
     private void addBtnClicked(){//Scene scene) {
         
-        //implementazione delle azione svolte quando viene cliccato il tasto H
+        //implementazione delle azione svolte quando viene cliccato il tasto SHIFT
        // scene.setOnKeyPressed(ke -> {
          // KeyCode keyCode = ke.getCode();
-           // if (keyCode.equals(KeyCode.H)) {
+           // if (keyCode.equals(KeyCode.SHIFT)) {
                 
                 int pross;
                 Direction direction=null;
@@ -241,7 +240,9 @@ public class Game2048 extends Application {
 
     }
 
-   
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }
