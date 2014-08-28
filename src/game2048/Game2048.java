@@ -1,5 +1,6 @@
 package game2048;
 
+import static javafx.application.Application.launch;
 import static java.awt.event.InputEvent.BUTTON1_MASK;
 import com.sun.glass.events.KeyEvent;
 import giocatoreAutomatico.GiocatoreAutomatico;
@@ -30,6 +31,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javax.swing.Timer;
+
+
 
 public class Game2048 extends Application {
 
