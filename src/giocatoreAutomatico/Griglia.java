@@ -13,7 +13,5 @@ Qualora nella posizione non ci siano numeri, sarà associato il valore -1
 
 
 
-//import game2048.Location;
-
 public interface Griglia extends java.util.Map<game2048.Location,Integer> { 
 }
