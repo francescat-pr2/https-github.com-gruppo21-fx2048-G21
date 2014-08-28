@@ -33,11 +33,10 @@ Se si preme il pulsante "Giocatore Automatico" il gioco si avvia e si gioca in a
 *Modifiche effettuate:*
 =====================
 -aggiunta del package giocatoreAutomatico (e giocatoreAutomatico.player);
--aggiunta delle classi implementate dalle interfacce.
--ascoltatore di eventi
--Thread
+-aggiunta delle classi implementate dalle interfacce;
+-ascoltatore di eventi;
+-Thread 
 
-myGriglia che viene aggiornata in base alla situazione del gioco
 
 
 *Game2048.java*
@@ -51,7 +50,7 @@ da qui viene inizializzato anche un oggetto di tipo GameManager che si occupa di
 
 
 
-GiocatoreAutomatico: 
+*GiocatoreAutomatico*
 viene creato un oggetto giocatoreAutomatico tramite il suo metodo; 
 button per attivare il giocatore automatico e conseguente azione che crea un Thread permettendo di simulare la pressione del tasto shift tramite un oggetto di tipo Robot, evento che viene catturato da un ascoltatore apposito addBtnClicked che implementa l'azione da eseguire:
 
