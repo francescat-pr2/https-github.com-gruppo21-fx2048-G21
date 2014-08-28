@@ -1,11 +1,15 @@
 fx2048
 ======
-
 *Pr2 Project 2014*
 ==================
 *Gruppo21 :*<BR>
 *Francesca Trudu matricola 44884*<BR>
 *Fulgheri Nadia Jolanda matricola 39310*
+
+
+The game 2048 built using JavaFX and Java 8. 
+This is a fork based on the Javascript version: https://github.com/atzori/fx2048.git
+
 
 
 
@@ -18,7 +22,7 @@ Modifica dell'implementazione del gioco 2048 in modo da permettere, opzionalment
 Strumenti utilizzati
 ====================
 NetBeans - <BR>
-GitHub - distributed version control system <BR>
+GitHub - <BR>
 
 
 Modalità di gioco:
@@ -85,3 +89,24 @@ Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere S
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+License
+===================
+
+The project is licensed under GPL 3. See [LICENSE](https://raw.githubusercontent.com/brunoborges/fx2048/master/LICENSE)
+file for the full license.
