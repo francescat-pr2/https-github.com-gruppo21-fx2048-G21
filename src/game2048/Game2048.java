@@ -31,31 +31,24 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javax.swing.Timer;
 
-
-/**
- * @author bruno.borges@oracle.com
- */
 public class Game2048 extends Application {
 
     private GameManager gameManager;
     private Bounds gameBounds;
     private GiocatoreAutomatico myPlayer;
-    
-    
-    private BooleanProperty booleanProperty = new SimpleBooleanProperty(false);
-    Direction dir=Direction.UP;//=null;
+   
 
-//creazione Robot
+
     Robot rbt2;
-    
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         gameManager = new GameManager();
         gameBounds = gameManager.getLayoutBounds();
         
-       
+        //restituisce un oggetto di tipo giocatoreAutomatico
         myPlayer = GiocatoreAutomatico.getGiocatoreAutomatico();
-        
+
         //oggeto button per 'attivare' il giocatore automatico
         Button button2 = new Button("Giocatore Automatico");
         
@@ -73,6 +66,9 @@ public class Game2048 extends Application {
         addKeyHandler(scene);
         addSwipeHandlers(scene);
 
+       // addBtnClicked(scene);
+        
+        
         if (isARMDevice()) {
             primaryStage.setFullScreen(true);
             primaryStage.setFullScreenExitHint("");
@@ -84,37 +80,36 @@ public class Game2048 extends Application {
 
         primaryStage.setTitle("2048FX");
         
-         //allineamento e aggiunta del button nella finestra
+        //allineamento e aggiunta del button nella finestra
         button2.setTranslateX(10);
         button2.setTranslateY(100);
         root.setAlignment(button2,Pos.TOP_CENTER);
         root.getChildren().add(button2);
-        
+
         
         primaryStage.setScene(scene);
         primaryStage.setMinWidth(gameBounds.getWidth());
         primaryStage.setMinHeight(gameBounds.getHeight());
         primaryStage.show();
-    }
-
-    private boolean isARMDevice() {
-        return System.getProperty("os.arch").toUpperCase().contains("ARM");
         
         
-         //creazione dell oggtto robot che andrà a simulare la pressione di un tasto
+        //creazione dell oggtto robot che andrà a simulare la pressione di un tasto
         try {
                 rbt2=new Robot();
         }catch (AWTException ex) {
                    Logger.getLogger(Game2048.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
        //azione che viene svolta alla pressione del button 'Giocatore Automatico'
        button2.setOnAction((ActionEvent event) -> {
+           //System.out.println("button premuto");
            //istanzia un nuovo Thread 
-          Thread t=new Thread(new Runnable() {
+          Thread t=
+              new Thread(new Runnable() {
               //implementa le azioni che si svolgono nel nuovo thread
               @Override
               public void run() {
+                  //System.out.println("thread lanciato");
                   //boolean di controllo per il ciclo while 
                   boolean cnt=gameManager.gameOver;
                   //al game over del gioco l esecuzione del thread viene terminata
@@ -124,18 +119,19 @@ public class Game2048 extends Application {
                         //se la finestra del gioco viene chiusa prima del game over
                         //il valore boolean di controllo del while cambia permettendo 
                         //di terminare il thread anche in questo caso
-                        if(!primaryStage.isShowing()){
-                             cnt=true;
-                             return;
+                       if(!primaryStage.isShowing()){
+                           cnt=true;
+                         return;
                             
-                        }
+                      }
                       
                        //System.out.println("while "+ gameManager.gameOver);
                         //l oggetto Robot simula la pressione del tasto H che verrà catturato
                         //dal listener
-                       rbt2.keyPress(KeyEvent.VK_H);
+                       rbt2.keyPress(KeyEvent.VK_SHIFT);
+                      // System.out.println("H premuto");
                        //rilascio del tasto H
-                       rbt2.keyRelease(KeyEvent.VK_H);
+                       rbt2.keyRelease(KeyEvent.VK_SHIFT);
                       
                       //System.out.println(primaryStage.isShowing());
                       //il thread rimane in pausa 200 cent di sec
@@ -148,7 +144,7 @@ public class Game2048 extends Application {
                
                  }
               //}
-          });
+          });//.start();
           //il thread viene mandato in esecuzione
           t.start();
            
@@ -156,13 +152,23 @@ public class Game2048 extends Application {
            
 
         } );
+        
                 
     }
+
+    private boolean isARMDevice() {
+        return System.getProperty("os.arch").toUpperCase().contains("ARM");
     }
 
     private void addKeyHandler(Scene scene) {
+       
         scene.setOnKeyPressed(ke -> {
             KeyCode keyCode = ke.getCode();
+            if (keyCode.equals(KeyCode.SHIFT)) {
+               // System.out.println("h catturato");
+                addBtnClicked();
+                return;
+            }
             if (keyCode.equals(KeyCode.S)) {
                 gameManager.saveSession();
                 return;
@@ -174,6 +180,9 @@ public class Game2048 extends Application {
             if (keyCode.isArrowKey() == false) {
                 return;
             }
+            
+            
+            
             Direction direction = Direction.valueFor(keyCode);
             gameManager.move(direction);
         });
@@ -229,3 +238,14 @@ public class Game2048 extends Application {
                 //System.out.println(gameManager);
                 //System.out.println(gameManager.gameOver);
           //  }});
+
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}
