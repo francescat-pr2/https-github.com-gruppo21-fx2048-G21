@@ -9,29 +9,26 @@ fx2048
 
 
 
-Scopo del progetto:
+Scopo del progetto
+==================
 Modifica dell'implementazione del gioco 2048 in modo da permettere, opzionalmente, di giocare autonomamente con un giocatore automatico. 
 
 
 
-Strumenti utilizzati:
-=
+Strumenti utilizzati
+====================
 NetBeans - <BR>
 GitHub - distributed version control system <BR>
 
 
 Modalità di gioco:
-=
+=================
 All'avvio del gioco compare una finestra principale attraverso la quale il giocatore può decidere se avviare il gioco manualmente facendo la prima mossa o premendo il pulsante apposito "Giocatore Automatico".
 Se si di effettua la prima mossa si inizia a giocare in modalità manuale e si prosegue il gioco effettuando una delle quattro mosse possibili con i tasti freccia direzionali.
 Se si preme il pulsante "Giocatore Automatico" il gioco si avvia e si gioca in automatico un intero turno cioè si esegue una sequenza consecutiva di mosse fino alla fine del gioco, ossia: 
 -risultato vincente 2048; <BR>
 -game over se non sono disponibili ulteriori mosse.
 
-
-
-*Modifiche effettuate:*
-=====================
 
 
 
@@ -43,6 +40,24 @@ da qui viene inizializzato anche un oggetto di tipo GameManager che si occupa di
 -aggiornamento della griglia (a livello grafico);<BR> 
 -aggiornamento dello score;<BR>
 -conclusione del gioco in caso di game over o vittoria del gioco.
+
+
+Modifiche effettuate:
+
+—>  inserimento button giocatore automatico:<BR> 
+al click del bottone viene azionato il gioco automatico;
+
+—>  creazione dell oggetto robot:<BR> 
+tramite l'oggetto robot viene simulare la pressione di un tasto;
+
+—>  creazione Thread:<BR> 
+permette di sincronizzare il gioco;
+
+—>  inserimento listener:<BR> 
+ascoltatore degli eventi attende la pressione del tasto SHIIFT, non appena si verifica l'evento si chiama il metodo prossima mossa.
+
+
+
 
 *Game Manager*
 
@@ -58,12 +73,10 @@ button per attivare il giocatore automatico e conseguente azione che crea un Thr
 
 
 chiamata al metodo del giocatoreAutomatico prossimaMossa che restituisce un int random da 0 a 3, switch nel valore int con conseguente creazione di un valore Direction che viene passato al metodo move() del GameManager che si occupa di gestire tutto il procedimento del movimento di una casella e le sue conseguenze. 
-Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere h e ogni volta l'ascoltatore intercetta l evento permettendo l esecuzione del gioco in autonomia.
+Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere SHIFT e ogni volta l'ascoltatore intercetta l evento permettendo l esecuzione del gioco in autonomia.
 
 
 
-partendo dall'ascoltatore degli eventi ascolta quando viene fatto la pressione del tasto h e una volta che viene fatto questo richiama il metodo prossima mossa.è l'ascoltatore 
-robot va in tred che viene mandato in esecuzione viene fatto in altro progetto che viene fatto in maniera sincronizzata.
 
 
 *Griglia*
