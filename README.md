@@ -48,6 +48,11 @@ da qui viene inizializzato anche un oggetto di tipo GameManager che si occupa di
 -aggiornamento dello score;<BR>
 -conclusione del gioco in caso di game over o vittoria del gioco.
 
+*Game Manager*
+
+
+
+
 
 
 *GiocatoreAutomatico*
@@ -64,9 +69,8 @@ Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere h
 partendo dall'ascoltatore degli eventi ascolta quando viene fatto la pressione del tasto h e una volta che viene fatto questo richiama il metodo prossima mossa.è l'ascoltatore 
 robot va in tred che viene mandato in esecuzione viene fatto in altro progetto che viene fatto in maniera sincronizzata.
 
-*Game Manager*
 
-
+*Griglia*
 
 
 
