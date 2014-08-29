@@ -39,10 +39,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-/**
- *
- * @author bruno
- */
+
+
+
 public class GameManager extends Group {
 
     private static final int FINAL_VALUE_TO_WIN = 2048;
