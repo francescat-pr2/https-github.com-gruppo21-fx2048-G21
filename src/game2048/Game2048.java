@@ -32,10 +32,11 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javax.swing.Timer;
 
-
-
-
+/**
+ * @author bruno.borges@oracle.com
+ */
 public class Game2048 extends Application {
+
 
     private GameManager gameManager;
     private Bounds gameBounds;
