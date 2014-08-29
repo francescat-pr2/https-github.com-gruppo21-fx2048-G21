@@ -44,18 +44,16 @@ import javafx.util.Duration;
  * @author bruno
  */
 
-
 public class GameManager extends Group {
 
     private static final int FINAL_VALUE_TO_WIN = 2048;
     public static final int CELL_SIZE = 128;
     private static final int DEFAULT_GRID_SIZE = 4;
     private static final int BORDER_WIDTH = (14 + 2) / 2;
-    // grid_width=4*cell_size + 2*cell_stroke/2d (14px css)+2*grid_stroke/2d (2 px css)
     private static final int GRID_WIDTH = CELL_SIZE * DEFAULT_GRID_SIZE + BORDER_WIDTH * 2;
     private static final int TOP_HEIGHT = 92;
 
-        private volatile boolean movingTiles = false;
+    private volatile boolean movingTiles = false;
     private final int gridSize;
     private final List<Integer> traversalX;
     private final List<Integer> traversalY;
@@ -68,6 +66,7 @@ public class GameManager extends Group {
     private final Set<Tile> mergedToBeRemoved = new HashSet<>();
     private final ParallelTransition parallelTransition = new ParallelTransition();
     private final BooleanProperty layerOnProperty = new SimpleBooleanProperty(false);
+    
     
     //variabili pubbliche per permettere la lettura diretta
     final MyGriglia myGriglia;
