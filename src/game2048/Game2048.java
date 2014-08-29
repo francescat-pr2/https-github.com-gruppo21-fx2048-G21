@@ -32,11 +32,12 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javax.swing.Timer;
 
+
+
 /**
  * @author bruno.borges@oracle.com
  */
 public class Game2048 extends Application {
-
 
     private GameManager gameManager;
     private Bounds gameBounds;
@@ -47,7 +48,6 @@ public class Game2048 extends Application {
     Robot rbt2;
 
     @Override
-  
     public void start(Stage primaryStage) throws Exception {
         gameManager = new GameManager();
         gameBounds = gameManager.getLayoutBounds();
@@ -99,7 +99,7 @@ public class Game2048 extends Application {
         primaryStage.show();
         
         
-          //creazione dell oggetto robot che andrà a simulare la pressione di un tasto
+        //creazione dell oggetto robot che andrà a simulare la pressione di un tasto
         try {
                 rbt2=new Robot();
         }catch (AWTException ex) {
