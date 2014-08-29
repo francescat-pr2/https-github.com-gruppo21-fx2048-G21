@@ -52,13 +52,10 @@ Modifiche effettuate:
 al click del bottone viene azionato il gioco automatico;
 
 —>  creazione dell oggetto robot:<BR> 
-tramite l'oggetto robot viene simulare la pressione di un tasto;
+tramite l'oggetto robot viene simulata la pressione del tasto SHIFT;
 
 —>  creazione Thread:<BR> 
-permette di sincronizzare il gioco;
-
-—>  inserimento listener:<BR> 
-ascoltatore degli eventi attende la pressione del tasto SHIIFT, non appena si verifica l'evento si chiama il metodo prossima mossa.
+creazione di un Thread che lavora parallelarmente al processo principale e si occupa di far funzionare il l'oggetto Robot e di sincronizzare il gioco;
 
 
 
