@@ -27,14 +27,16 @@ GitHub - <BR>
 
 Modalità di gioco:
 =================
-All'avvio del gioco compare una finestra principale attraverso la quale il giocatore può decidere se avviare il gioco manualmente facendo la prima mossa o premendo il pulsante apposito "Giocatore Automatico".
+All'avvio del gioco compare una finestra principale attraverso la quale il giocatore può decidere se avviare il gioco manualmente facendo la prima mossa o se giocare tramite l'ausilio di un giocatore automatico premendo il pulsante apposito.
 Se si di effettua la prima mossa si inizia a giocare in modalità manuale e si prosegue il gioco effettuando una delle quattro mosse possibili con i tasti freccia direzionali.
-Se si preme il pulsante "Giocatore Automatico" il gioco si avvia e si gioca in automatico un intero turno cioè si esegue una sequenza consecutiva di mosse fino alla fine del gioco, ossia: 
+Se si preme il pulsante "Giocatore Automatico" si avvia il gioco in modalità automatica o si prosegue il gioco con tale modalità se si è precedentemente iniziata la manche in modalità giocatore standard; 
+il giocatore automatico eseguirà un intero turno di gioco, ossia esegue una sequenza consecutiva di mosse fino alla fine della partita, ossia: 
 -risultato vincente 2048; <BR>
 -game over se non sono disponibili ulteriori mosse.
 
 
 
+*Classi principali del gioco e modifiche effettuate*
 
 *Game2048.java*
 
@@ -48,21 +50,14 @@ da qui viene inizializzato anche un oggetto di tipo GameManager che si occupa di
 
 Modifiche effettuate:
 
-—>  inserimento button giocatore automatico:<BR> 
+—>  inserimento del button giocatore automatico:<BR> 
 al click del bottone viene azionato il gioco automatico;
 
-—>  creazione dell oggetto robot:<BR> 
+—>  creazione dell'oggetto robot:<BR> 
 tramite l'oggetto robot viene simulata la pressione del tasto SHIFT;
 
 —>  creazione Thread:<BR> 
 creazione di un Thread che lavora parallelarmente al processo principale e si occupa di far funzionare il l'oggetto Robot e di sincronizzare il gioco;
-
-
-
-
-*Game Manager*
-
-
 
 
 
@@ -76,11 +71,6 @@ button per attivare il giocatore automatico e conseguente azione che crea un Thr
 chiamata al metodo del giocatoreAutomatico prossimaMossa che restituisce un int random da 0 a 3, switch nel valore int con conseguente creazione di un valore Direction che viene passato al metodo move() del GameManager che si occupa di gestire tutto il procedimento del movimento di una casella e le sue conseguenze. 
 Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere SHIFT e ogni volta l'ascoltatore intercetta l evento permettendo l esecuzione del gioco in autonomia.
 
-
-
-
-
-*Griglia*
 
 
 
