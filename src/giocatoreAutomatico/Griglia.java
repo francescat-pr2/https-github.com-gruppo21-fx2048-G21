@@ -1,4 +1,4 @@
-package giocatoreAutomatico;
+
 
 
 /* Griglia.java 
