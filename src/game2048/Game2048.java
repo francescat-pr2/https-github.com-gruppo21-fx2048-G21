@@ -34,6 +34,7 @@ import javax.swing.Timer;
 
 
 
+
 public class Game2048 extends Application {
 
     private GameManager gameManager;
