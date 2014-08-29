@@ -115,7 +115,29 @@ public class Game2048 extends Application {
               public void run() {
                 
                   
+                  boolean cnt=gameManager.gameOver;
+                  //al game over del gioco l'esecuzione del thread viene terminata
+                  while(!cnt)
                   
+                  try {
+                        //se la finestra del gioco viene chiusa prima del game over
+                        //il valore boolean di controllo del while cambia permettendo 
+                        //di terminare il thread anche in questo caso
+                       if(!primaryStage.isShowing()){
+                           cnt=true;
+                         return;
+                            
+                      }
+                     
+                        //l'oggetto Robot simula la pressione del tasto SHIFT che verrà catturato dal listener
+                       rbt2.keyPress(KeyEvent.VK_SHIFT);
+                       
+                       //rilascio del tasto SHIFT
+                       rbt2.keyRelease(KeyEvent.VK_SHIFT);
+                      
+                      //il thread rimane in pausa 200 cent di sec
+                      Thread.sleep(200);
+                      
                   
                   
                   
