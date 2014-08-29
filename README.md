@@ -61,7 +61,7 @@ creazione di un Thread che lavora parallelarmente al processo principale e si oc
 
 *GameManager*
 Nella classe GameManager il metodo move() si occupa di gestire tutto il procedimento del movimento di una casella e le sue conseguenze. 
-Aggiornamento MyGriglia
+Inizializzazione e aggiornamento MyGriglia.
 
 *MyGiocatoreAutomatico*
 Implementa l'interfaccia GiocatoreAutomatico.
