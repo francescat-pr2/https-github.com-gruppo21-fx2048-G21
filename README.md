@@ -47,31 +47,27 @@ da qui viene inizializzato anche un oggetto di tipo GameManager che si occupa di
 -aggiornamento dello score;<BR>
 -conclusione del gioco in caso di game over o vittoria del gioco.
 
-
 Modifiche effettuate:
 
-—>  inserimento del button giocatore automatico:<BR> 
+—>  inserimento del button 'Giocatore Automatico':<BR> 
 al click del bottone viene azionato il gioco automatico;
 
-—>  creazione dell'oggetto robot:<BR> 
-tramite l'oggetto robot viene simulata la pressione del tasto SHIFT;
+—>  creazione dell'oggetto Robot:<BR> 
+tramite l'oggetto robot viene simulata la pressione del tasto SHIFT finchè non si ha il gameOver o il gameWon, il Robot continua a premere SHIFT e ogni volta l'ascoltatore intercetta l'evento permettendo l'esecuzione del gioco in autonomia;
 
 —>  creazione Thread:<BR> 
 creazione di un Thread che lavora parallelarmente al processo principale e si occupa di far funzionare il l'oggetto Robot e di sincronizzare il gioco;
 
 
+*GameManager*
+Nella classe GameManager il metodo move() si occupa di gestire tutto il procedimento del movimento di una casella e le sue conseguenze. 
 
+*MyGiocatoreAutomatico*
+Implementa l'interfaccia GiocatoreAutomatico.
+Implimenta il metodo prossimaMossa dichiarato nell'interfaccia; tale metodo è utilizzato nel Game2048 su un oggetto GiocatoreAutomatico (memorizzato nella variabile myPlayer) e restituisce un int random da 0 a 3 con conseguente creazione di un valore Direction che viene passato al metodo move() del GameManager. 
 
-*GiocatoreAutomatico*
-viene creato un oggetto giocatoreAutomatico tramite il suo metodo; 
-button per attivare il giocatore automatico e conseguente azione che crea un Thread permettendo di simulare la pressione del tasto shift tramite un oggetto di tipo Robot, evento che viene catturato da un ascoltatore apposito addBtnClicked che implementa l'azione da eseguire:
-
-
-
-chiamata al metodo del giocatoreAutomatico prossimaMossa che restituisce un int random da 0 a 3, switch nel valore int con conseguente creazione di un valore Direction che viene passato al metodo move() del GameManager che si occupa di gestire tutto il procedimento del movimento di una casella e le sue conseguenze. 
-Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere SHIFT e ogni volta l'ascoltatore intercetta l evento permettendo l esecuzione del gioco in autonomia.
-
-
+*MyGriglia*
+Implementa l'interfaccia Griglia.
 
 
 License
