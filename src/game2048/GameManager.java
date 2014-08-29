@@ -39,11 +39,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-/**GameManager
+
+**Classe GameManager
  *
  * @author bruno
  */
-
 public class GameManager extends Group {
 
     private static final int FINAL_VALUE_TO_WIN = 2048;
@@ -67,16 +67,22 @@ public class GameManager extends Group {
     private final ParallelTransition parallelTransition = new ParallelTransition();
     private final BooleanProperty layerOnProperty = new SimpleBooleanProperty(false);
     
-    
     //variabili pubbliche per permettere la lettura diretta
     final MyGriglia myGriglia;
     boolean gameOver=false;
     boolean gameWon=false;
+
+    // User Interface controls
+    private final VBox vGame = new VBox(50);
+    private final Group gridGroup = new Group();
+
     private final HBox hTop = new HBox(0);
     private final Label lblScore = new Label("0");
     private final Label lblPoints = new Label();
     private final HBox hOvrLabel = new HBox();
     private final HBox hOvrButton = new HBox();
+    
+   // private final Button btn;
 
     public GameManager() {
         this(DEFAULT_GRID_SIZE);
@@ -84,26 +90,36 @@ public class GameManager extends Group {
 
     public GameManager(int gridSize) {
         this.gameGrid = new HashMap<>();
+        this.myGriglia = new MyGriglia();   //myGriglia inizializzata con caselle a -1
         this.gridSize = gridSize;
         this.traversalX = IntStream.range(0, gridSize).boxed().collect(Collectors.toList());
         this.traversalY = IntStream.range(0, gridSize).boxed().collect(Collectors.toList());
-
+        
+        
         createScore();
         createGrid();
         initGameProperties();
 
         initializeGrid();
+  
 
         this.setManaged(false);
+        
+        
     }
+    
 
     public void move(Direction direction) {
+        
+        
         if (layerOnProperty.get()) {
+            
             return;
         }
 
         synchronized (gameGrid) {
             if (movingTiles) {
+                
                 return;
             }
         }
@@ -125,9 +141,14 @@ public class GameManager extends Group {
 
             if (tileToBeMerged != null && tileToBeMerged.getValue().equals(tile.getValue()) && !tileToBeMerged.isMerged()) {
                 tileToBeMerged.merge(tile);
-
+                
+                //all'aggiornamento di gameGrid viene aggiornata anche myGriglia
                 gameGrid.put(nextLocation, tileToBeMerged);
+                myGriglia.put(nextLocation, tileToBeMerged.getValue());
                 gameGrid.replace(tile.getLocation(), null);
+                myGriglia.replace(tile.getLocation(), -1);
+               
+      
 
                 parallelTransition.getChildren().add(animateExistingTile(tile, tileToBeMerged.getLocation()));
                 parallelTransition.getChildren().add(hideTileToBeMerged(tile));
@@ -138,13 +159,17 @@ public class GameManager extends Group {
 
                 if (tileToBeMerged.getValue() == FINAL_VALUE_TO_WIN) {
                     gameWonProperty.set(true);
+                    gameWon=true;
                 }
                 return 1;
             } else if (farthestLocation.equals(tile.getLocation()) == false) {
                 parallelTransition.getChildren().add(animateExistingTile(tile, farthestLocation));
 
+                //all'aggiornamento di gameGrid viene aggiornata anche myGriglia
                 gameGrid.put(farthestLocation, tile);
+                myGriglia.put(farthestLocation, tile.getValue());
                 gameGrid.replace(tile.getLocation(), null);
+                myGriglia.replace(tile.getLocation(), null);
 
                 tile.setLocation(farthestLocation);
 
@@ -169,6 +194,7 @@ public class GameManager extends Group {
             Location randomAvailableLocation = findRandomAvailableLocation();
             if (randomAvailableLocation == null && !mergeMovementsAvailable()) {
                 gameOverProperty.set(true);
+                gameOver=true;
             } else if (randomAvailableLocation != null && tilesWereMoved > 0) {
                 addAndAnimateRandomTile(randomAvailableLocation);
             }
@@ -177,6 +203,7 @@ public class GameManager extends Group {
 
             // reset merged after each movement
             gameGrid.values().stream().filter(Objects::nonNull).forEach(Tile::clearMerge);
+            
         });
 
         synchronized (gameGrid) {
@@ -425,6 +452,9 @@ public class GameManager extends Group {
         traverseGrid((x, y) -> {
             Location thisloc = new Location(x, y);
             gameGrid.put(thisloc, null);
+            
+            
+                System.out.println(thisloc);
             return 0;
         });
     }
@@ -452,6 +482,10 @@ public class GameManager extends Group {
                 return;
             }
             gameGrid.put(t.getLocation(), t);
+            //inizializza myGriglia
+            myGriglia.put(t.getLocation(),t.getValue());
+            //System.out.print(myGriglia.get(t.getLocation()));
+            
         });
 
         redrawTilesInGameGrid();
@@ -486,8 +520,10 @@ public class GameManager extends Group {
         tile.setLayoutY(layoutY);
         tile.setScaleX(0);
         tile.setScaleY(0);
-
+        
+        //inizializza myGriglia come gameGrid
         gameGrid.put(tile.getLocation(), tile);
+        myGriglia.put(tile.getLocation(),tile.getValue());
         gridGroup.getChildren().add(tile);
 
         animateNewlyAddedTile(tile).play();
