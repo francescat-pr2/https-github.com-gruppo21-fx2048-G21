@@ -39,7 +39,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-
+/**GameManager
+ *
+ * @author bruno
+ */
 
 
 public class GameManager extends Group {
