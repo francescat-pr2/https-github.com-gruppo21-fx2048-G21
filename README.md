@@ -70,5 +70,9 @@ Implimenta il metodo prossimaMossa dichiarato nell'interfaccia; tale metodo è u
 *MyGriglia*
 Implementa l'interfaccia 
 
+
+LICENCE
+=======
+
 The project is licensed under GPL 3. See [LICENSE](https://raw.githubusercontent.com/brunoborges/fx2048/master/LICENSE)
 file for the full license.
