@@ -30,8 +30,8 @@ Modalità di gioco:
 All'avvio del gioco compare una finestra principale attraverso la quale il giocatore può decidere se avviare il gioco manualmente facendo la prima mossa o se giocare tramite l'ausilio di un giocatore automatico premendo il pulsante apposito.
 Se si di effettua la prima mossa si inizia a giocare in modalità manuale e si prosegue il gioco effettuando una delle quattro mosse possibili con i tasti freccia direzionali.
 Se si preme il pulsante "Giocatore Automatico" si avvia il gioco in modalità automatica o si prosegue il gioco con tale modalità se si è precedentemente iniziata la manche in modalità giocatore standard; 
-il giocatore automatico eseguirà un intero turno di gioco, ossia esegue una sequenza consecutiva di mosse fino alla fine della partita, ossia: 
--risultato vincente 2048; <BR>
+il giocatore automatico eseguirà un intero turno di gioco, esegue una sequenza consecutiva di mosse fino alla fine della partita, ossia: <BR>
+-raggiungimento del risultato vincente 2048; <BR>
 -game over se non sono disponibili ulteriori mosse.
 
 
@@ -68,11 +68,7 @@ Implementa l'interfaccia GiocatoreAutomatico.
 Implimenta il metodo prossimaMossa dichiarato nell'interfaccia; tale metodo è utilizzato nel Game2048 su un oggetto GiocatoreAutomatico (memorizzato nella variabile myPlayer) e restituisce un int random da 0 a 3 con conseguente creazione di un valore Direction che viene passato al metodo move() del GameManager. 
 
 *MyGriglia*
-Implementa l'interfaccia Griglia.
-
-
-License
-===================
+Implementa l'interfaccia 
 
 The project is licensed under GPL 3. See [LICENSE](https://raw.githubusercontent.com/brunoborges/fx2048/master/LICENSE)
 file for the full license.
