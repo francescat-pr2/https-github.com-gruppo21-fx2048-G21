@@ -1,11 +1,4 @@
 /*
-
- * To change this license header, choose License Headers in Project Properties.
-
- * To change this template file, choose Tools | Templates
-
- * and open the template in the editor.
-
  */
 
 
@@ -34,15 +27,8 @@ import java.util.logging.Logger;
 
 public class MyGiocatoreAutomatico implements GiocatoreAutomatico{
 
-    //int ALTO=0; int DX=1; int BASSO=2; int SX=3;
-
+    
     Griglia gr;
-
-    
-
-    
-
-
 
     @Override
 
@@ -54,22 +40,10 @@ public class MyGiocatoreAutomatico implements GiocatoreAutomatico{
 
         int pros = (int) (Math.random() * 4);
 
-        //System.out.println(pros);
-
-        
-
-        
-
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-
+     
         return pros;
 
     }
-
-    
-
-    
-
     
 
 }
