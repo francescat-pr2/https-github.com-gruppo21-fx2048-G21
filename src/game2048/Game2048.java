@@ -130,7 +130,6 @@ public class Game2048 extends Application {
                        //rilascio del tasto SHIFT
                        rbt2.keyRelease(KeyEvent.VK_SHIFT);
                       
-                      //System.out.println(primaryStage.isShowing());
                       //il thread rimane in pausa 200 cent di sec
                       Thread.sleep(200);//mezzo secondo
                       
@@ -140,8 +139,8 @@ public class Game2048 extends Application {
                   }
                
                  }
-              //}
-          });//.start();
+              
+          });
           //il thread viene mandato in esecuzione
           t.start();
            
@@ -162,7 +161,7 @@ public class Game2048 extends Application {
         scene.setOnKeyPressed(ke -> {
             KeyCode keyCode = ke.getCode();
             if (keyCode.equals(KeyCode.SHIFT)) {
-               // System.out.println("h catturato");
+              
                 addBtnClicked();
                 return;
             }
