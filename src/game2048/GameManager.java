@@ -39,9 +39,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-/**
+
+**Classe GameManager
  *
- * @author bruno
+ * @author Francesca e Nadia
  */
 public class GameManager extends Group {
 
@@ -49,7 +50,6 @@ public class GameManager extends Group {
     public static final int CELL_SIZE = 128;
     private static final int DEFAULT_GRID_SIZE = 4;
     private static final int BORDER_WIDTH = (14 + 2) / 2;
-    // grid_width=4*cell_size + 2*cell_stroke/2d (14px css)+2*grid_stroke/2d (2 px css)
     private static final int GRID_WIDTH = CELL_SIZE * DEFAULT_GRID_SIZE + BORDER_WIDTH * 2;
     private static final int TOP_HEIGHT = 92;
 
@@ -82,7 +82,7 @@ public class GameManager extends Group {
     private final HBox hOvrLabel = new HBox();
     private final HBox hOvrButton = new HBox();
     
-   // private final Button btn;
+   
 
     public GameManager() {
         this(DEFAULT_GRID_SIZE);
@@ -101,12 +101,7 @@ public class GameManager extends Group {
         initGameProperties();
 
         initializeGrid();
-
-        
-        
-        
-        
-        
+  
 
         this.setManaged(false);
         
@@ -147,7 +142,7 @@ public class GameManager extends Group {
             if (tileToBeMerged != null && tileToBeMerged.getValue().equals(tile.getValue()) && !tileToBeMerged.isMerged()) {
                 tileToBeMerged.merge(tile);
                 
-                //all aggiornamento di gameGrid viene aggiornata anche myGriglia
+                //all'aggiornamento di gameGrid viene aggiornata anche myGriglia
                 gameGrid.put(nextLocation, tileToBeMerged);
                 myGriglia.put(nextLocation, tileToBeMerged.getValue());
                 gameGrid.replace(tile.getLocation(), null);
@@ -170,7 +165,7 @@ public class GameManager extends Group {
             } else if (farthestLocation.equals(tile.getLocation()) == false) {
                 parallelTransition.getChildren().add(animateExistingTile(tile, farthestLocation));
 
-                //all aggiornamento di gameGrid viene aggiornata anche myGriglia
+                //all'aggiornamento di gameGrid viene aggiornata anche myGriglia
                 gameGrid.put(farthestLocation, tile);
                 myGriglia.put(farthestLocation, tile.getValue());
                 gameGrid.replace(tile.getLocation(), null);
@@ -489,8 +484,7 @@ public class GameManager extends Group {
             gameGrid.put(t.getLocation(), t);
             //inizializza myGriglia
             myGriglia.put(t.getLocation(),t.getValue());
-            //System.out.print(myGriglia.get(t.getLocation()));
-            
+         
         });
 
         redrawTilesInGameGrid();
