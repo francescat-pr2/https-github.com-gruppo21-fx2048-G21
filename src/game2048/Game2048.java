@@ -43,7 +43,6 @@ public class Game2048 extends Application {
     private GiocatoreAutomatico myPlayer;
    
 
-
     Robot rbt2;
 
     @Override
@@ -94,7 +93,7 @@ public class Game2048 extends Application {
         primaryStage.show();
         
         
-        //creazione dell oggtto robot che andrà a simulare la pressione di un tasto
+        //creazione dell oggetto robot che andrà a simulare la pressione di un tasto
         try {
                 rbt2=new Robot();
         }catch (AWTException ex) {
@@ -102,17 +101,17 @@ public class Game2048 extends Application {
         }
        //azione che viene svolta alla pressione del button 'Giocatore Automatico'
        button2.setOnAction((ActionEvent event) -> {
-           //System.out.println("button premuto");
+
            //istanzia un nuovo Thread 
           Thread t=
               new Thread(new Runnable() {
               //implementa le azioni che si svolgono nel nuovo thread
               @Override
               public void run() {
-                  //System.out.println("thread lanciato");
+ 
                   //boolean di controllo per il ciclo while 
                   boolean cnt=gameManager.gameOver;
-                  //al game over del gioco l esecuzione del thread viene terminata
+                  //al game over del gioco l'esecuzione del thread viene terminata
                   while(!cnt)
                   
                   try {
@@ -125,9 +124,7 @@ public class Game2048 extends Application {
                             
                       }
                       
-                       //System.out.println("while "+ gameManager.gameOver);
-                        //l oggetto Robot simula la pressione del tasto H che verrà catturato
-                        //dal listener
+                        //l'oggetto Robot simula la pressione del tasto H che verrà catturato dal listener
                        rbt2.keyPress(KeyEvent.VK_SHIFT);
                       // System.out.println("H premuto");
                        //rilascio del tasto H
