@@ -16,7 +16,7 @@ import java.util.Set;
  */
 public class MyGriglia implements Griglia{
     
-    //GameManager myGameManager;//= new GameManager();
+   
     Map mapGriglia;
     Map myGrid;
     int chiavi;
@@ -42,7 +42,7 @@ public class MyGriglia implements Griglia{
     
     }
     
-    //restituisce la griglia inizializzata dalla main
+    //restituisce la griglia inizializzata dal main
     public Griglia getGriglia(){
         return this;
     }
@@ -75,13 +75,12 @@ public class MyGriglia implements Griglia{
         
         
         
-        //return 1;
+        
     }
 
     @Override
     public Integer put(Location k, Integer v) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        //return this.get(v);
+        
         Iterator itKey=mapGriglia.keySet().iterator();
         
                 
@@ -115,7 +114,7 @@ public class MyGriglia implements Griglia{
     @Override
     public Collection<Integer> values() {
         return mapGriglia.values();
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
