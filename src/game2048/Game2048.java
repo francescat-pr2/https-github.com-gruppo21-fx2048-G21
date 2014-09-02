@@ -126,8 +126,8 @@ public class Game2048 extends Application {
                       
                         //l'oggetto Robot simula la pressione del tasto H che verrà catturato dal listener
                        rbt2.keyPress(KeyEvent.VK_SHIFT);
-                      // System.out.println("H premuto");
-                       //rilascio del tasto H
+
+                       //rilascio del tasto SHIFT
                        rbt2.keyRelease(KeyEvent.VK_SHIFT);
                       
                       //System.out.println(primaryStage.isShowing());
