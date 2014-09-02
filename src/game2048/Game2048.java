@@ -69,7 +69,7 @@ public class Game2048 extends Application {
         scene.getStylesheets().add("game2048/game.css");
         addKeyHandler(scene);
         addSwipeHandlers(scene);
-       // addBtnClicked(scene);
+      
         
         
         
