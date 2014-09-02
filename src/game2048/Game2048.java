@@ -53,7 +53,6 @@ public class Game2048 extends Application {
         
         //restituisce un oggetto di tipo giocatoreAutomatico
         myPlayer = GiocatoreAutomatico.getGiocatoreAutomatico();
-
         //oggeto button per 'attivare' il giocatore automatico
         Button button2 = new Button("Giocatore Automatico");
         
@@ -70,7 +69,8 @@ public class Game2048 extends Application {
         scene.getStylesheets().add("game2048/game.css");
         addKeyHandler(scene);
         addSwipeHandlers(scene);
-
+       // addBtnClicked(scene);
+        
         
         
         if (isARMDevice()) {
