@@ -32,16 +32,19 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javax.swing.Timer;
 
+
+
+
 /**
  * @author bruno.borges@oracle.com
  */
- 
 public class Game2048 extends Application {
 
     private GameManager gameManager;
     private Bounds gameBounds;
     private GiocatoreAutomatico myPlayer;
    
+
 
     Robot rbt2;
 
@@ -68,8 +71,10 @@ public class Game2048 extends Application {
         scene.getStylesheets().add("game2048/game.css");
         addKeyHandler(scene);
         addSwipeHandlers(scene);
-  
-  if (isARMDevice()) {
+       
+        
+        
+        if (isARMDevice()) {
             primaryStage.setFullScreen(true);
             primaryStage.setFullScreenExitHint("");
         }
@@ -93,7 +98,7 @@ public class Game2048 extends Application {
         primaryStage.show();
         
         
-        //creazione dell oggetto robot che andrà a simulare la pressione di un tasto
+        //creazione dell oggtto robot che andrà a simulare la pressione di un tasto
         try {
                 rbt2=new Robot();
         }catch (AWTException ex) {
@@ -101,17 +106,17 @@ public class Game2048 extends Application {
         }
        //azione che viene svolta alla pressione del button 'Giocatore Automatico'
        button2.setOnAction((ActionEvent event) -> {
-
+      
            //istanzia un nuovo Thread 
           Thread t=
               new Thread(new Runnable() {
               //implementa le azioni che si svolgono nel nuovo thread
               @Override
               public void run() {
- 
+
                   //boolean di controllo per il ciclo while 
                   boolean cnt=gameManager.gameOver;
-                  //al game over del gioco l'esecuzione del thread viene terminata
+                  //al game over del gioco l esecuzione del thread viene terminata
                   while(!cnt)
                   
                   try {
@@ -124,9 +129,10 @@ public class Game2048 extends Application {
                             
                       }
                       
-                        //l'oggetto Robot simula la pressione del tasto H che verrà catturato dal listener
+                        //l'oggetto Robot simula la pressione del tasto H che verrà catturato
+                        //dal listener
                        rbt2.keyPress(KeyEvent.VK_SHIFT);
-
+                    
                        //rilascio del tasto SHIFT
                        rbt2.keyRelease(KeyEvent.VK_SHIFT);
                       
@@ -139,7 +145,7 @@ public class Game2048 extends Application {
                   }
                
                  }
-              
+              //}
           });
           //il thread viene mandato in esecuzione
           t.start();
@@ -161,7 +167,7 @@ public class Game2048 extends Application {
         scene.setOnKeyPressed(ke -> {
             KeyCode keyCode = ke.getCode();
             if (keyCode.equals(KeyCode.SHIFT)) {
-              
+               
                 addBtnClicked();
                 return;
             }
@@ -198,9 +204,8 @@ public class Game2048 extends Application {
     //ascoltatore dell evento button Giocatore Automatico cliccato
     private void addBtnClicked(){//Scene scene) {
         
-        //implementazione delle azione svolte quando viene cliccato il tasto SHIFT 
+        //implementazione delle azione svolte quando viene cliccato il tasto SHIFT
        
-                
                 int pross;
                 Direction direction=null;
           
@@ -214,22 +219,22 @@ public class Game2048 extends Application {
                         System.out.println("mossa "+ pross);
                         break;
                     case 1: direction = Direction.RIGHT;
-                        
+                       
                         System.out.println("mossa "+ pross);
                         break;
                     case 2: direction = Direction.DOWN;
-                        
+                       
                         System.out.println("mossa "+ pross);
                         break;
                     case 3: direction = Direction.LEFT;
-                        
+                       
                         System.out.println("mossa "+ pross);
                         break;
                 }
                 //viene richiamato il metodo move per eseguire la mossa in base alla direzione
                 //restituita
                 gameManager.move(direction);
-               ;
+               
 
     }
 
