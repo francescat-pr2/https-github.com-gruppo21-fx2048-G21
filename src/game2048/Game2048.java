@@ -145,7 +145,7 @@ public class Game2048 extends Application {
                   }
                
                  }
-              //}
+    
           });
           //il thread viene mandato in esecuzione
           t.start();
