@@ -13,12 +13,12 @@ import java.util.Set;
 
 /**
  *
- * * @author Francesca
-  * @author Nadia
+ * @author Francesca
+ * @author Nadia
  */
 public class MyGriglia implements Griglia{
     
-    //GameManager myGameManager;//= new GameManager();
+    
     Map mapGriglia;
     Map myGrid;
     int chiavi;
@@ -71,8 +71,7 @@ public class MyGriglia implements Griglia{
         //restituisce il valore associato alla chiave passata come parametro
     @Override
     public Integer get(Object o) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        //if(mapGriglia.containsKey(o))
+       
         return (Integer)mapGriglia.get(o);
         
         
@@ -82,8 +81,7 @@ public class MyGriglia implements Griglia{
 
     @Override
     public Integer put(Location k, Integer v) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        //return this.get(v);
+       
         Iterator itKey=mapGriglia.keySet().iterator();
         
                 
@@ -117,7 +115,7 @@ public class MyGriglia implements Griglia{
     @Override
     public Collection<Integer> values() {
         return mapGriglia.values();
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
