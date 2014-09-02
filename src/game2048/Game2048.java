@@ -198,10 +198,8 @@ public class Game2048 extends Application {
     //ascoltatore dell evento button Giocatore Automatico cliccato
     private void addBtnClicked(){//Scene scene) {
         
-        //implementazione delle azione svolte quando viene cliccato il tasto H
-       // scene.setOnKeyPressed(ke -> {
-         // KeyCode keyCode = ke.getCode();
-           // if (keyCode.equals(KeyCode.H)) {
+        //implementazione delle azione svolte quando viene cliccato il tasto SHIFT 
+       
                 
                 int pross;
                 Direction direction=null;
@@ -212,28 +210,26 @@ public class Game2048 extends Application {
                 //ad ogni valore tra 0 e 3 viene assegnata la direzione della mossa
                 switch(pross){
                     case 0: direction = Direction.UP;
-                        //gameManager.move(Direction.UP);
+                        
                         System.out.println("mossa "+ pross);
                         break;
                     case 1: direction = Direction.RIGHT;
-                        //gameManager.move(Direction.RIGHT);
+                        
                         System.out.println("mossa "+ pross);
                         break;
                     case 2: direction = Direction.DOWN;
-                        //gameManager.move(Direction.DOWN);
+                        
                         System.out.println("mossa "+ pross);
                         break;
                     case 3: direction = Direction.LEFT;
-                        //gameManager.move(Direction.LEFT);
+                        
                         System.out.println("mossa "+ pross);
                         break;
                 }
                 //viene richiamato il metodo move per eseguire la mossa in base alla direzione
                 //restituita
                 gameManager.move(direction);
-                //System.out.println(gameManager);
-                //System.out.println(gameManager.gameOver);
-          //  }});
+               ;
 
     }
 
