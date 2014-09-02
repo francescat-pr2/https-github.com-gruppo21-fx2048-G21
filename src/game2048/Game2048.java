@@ -69,11 +69,8 @@ public class Game2048 extends Application {
         scene.getStylesheets().add("game2048/game.css");
         addKeyHandler(scene);
         addSwipeHandlers(scene);
-      
-        
-        
-        
-        if (isARMDevice()) {
+  
+  if (isARMDevice()) {
             primaryStage.setFullScreen(true);
             primaryStage.setFullScreenExitHint("");
         }
@@ -97,25 +94,25 @@ public class Game2048 extends Application {
         primaryStage.show();
         
         
-        //creazione dell oggetto robot che andrà a simulare la pressione di un tasto
+        //creazione dell oggtto robot che andrà a simulare la pressione di un tasto
         try {
                 rbt2=new Robot();
         }catch (AWTException ex) {
                    Logger.getLogger(Game2048.class.getName()).log(Level.SEVERE, null, ex);
         }
-
        //azione che viene svolta alla pressione del button 'Giocatore Automatico'
        button2.setOnAction((ActionEvent event) -> {
-          
+           //System.out.println("button premuto");
+           //istanzia un nuovo Thread 
           Thread t=
               new Thread(new Runnable() {
-              
+              //implementa le azioni che si svolgono nel nuovo thread
               @Override
               public void run() {
-                
-                  
+                  //System.out.println("thread lanciato");
+                  //boolean di controllo per il ciclo while 
                   boolean cnt=gameManager.gameOver;
-                  //al game over del gioco l'esecuzione del thread viene terminata
+                  //al game over del gioco l esecuzione del thread viene terminata
                   while(!cnt)
                   
                   try {
@@ -127,29 +124,31 @@ public class Game2048 extends Application {
                          return;
                             
                       }
-                     
-                        //l'oggetto Robot simula la pressione del tasto SHIFT che verrà catturato dal listener
+                      
+                       //System.out.println("while "+ gameManager.gameOver);
+                        //l oggetto Robot simula la pressione del tasto H che verrà catturato
+                        //dal listener
                        rbt2.keyPress(KeyEvent.VK_SHIFT);
-                       
-                       //rilascio del tasto SHIFT
+                      // System.out.println("H premuto");
+                       //rilascio del tasto H
                        rbt2.keyRelease(KeyEvent.VK_SHIFT);
                       
+                      //System.out.println(primaryStage.isShowing());
                       //il thread rimane in pausa 200 cent di sec
-                      Thread.sleep(200);
+                      Thread.sleep(200);//mezzo secondo
                       
-                  
-                  
-                  
-                  
+                      
                   } catch (InterruptedException ex) {
                       Logger.getLogger(Game2048.class.getName()).log(Level.SEVERE, null, ex);
                   }
                
                  }
-                 
-          });
+              //}
+          });//.start();
           //il thread viene mandato in esecuzione
           t.start();
+           
+           
            
 
         } );
@@ -166,8 +165,8 @@ public class Game2048 extends Application {
         scene.setOnKeyPressed(ke -> {
             KeyCode keyCode = ke.getCode();
             if (keyCode.equals(KeyCode.SHIFT)) {
-               
-               addBtnClicked();
+               // System.out.println("h catturato");
+                addBtnClicked();
                 return;
             }
             if (keyCode.equals(KeyCode.S)) {
@@ -202,6 +201,11 @@ public class Game2048 extends Application {
     
     //ascoltatore dell evento button Giocatore Automatico cliccato
     private void addBtnClicked(){//Scene scene) {
+        
+        //implementazione delle azione svolte quando viene cliccato il tasto H
+       // scene.setOnKeyPressed(ke -> {
+         // KeyCode keyCode = ke.getCode();
+           // if (keyCode.equals(KeyCode.H)) {
                 
                 int pross;
                 Direction direction=null;
@@ -228,7 +232,8 @@ public class Game2048 extends Application {
                         System.out.println("mossa "+ pross);
                         break;
                 }
-                //viene richiamato il metodo move per eseguire la mossa in base alla direzione restituita
+                //viene richiamato il metodo move per eseguire la mossa in base alla direzione
+                //restituita
                 gameManager.move(direction);
                 //System.out.println(gameManager);
                 //System.out.println(gameManager.gameOver);
@@ -244,4 +249,3 @@ public class Game2048 extends Application {
     }
 
 }
-
