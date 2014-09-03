@@ -60,8 +60,10 @@ creazione di un Thread che lavora parallelarmente al processo principale e si oc
 
 
 *GameManager*
-Nella classe GameManager il metodo move() si occupa di gestire tutto il procedimento del movimento di una casella e le sue conseguenze. 
-Inizializzazione e aggiornamento MyGriglia.
+
+Tramite il metodo move, viene gestito il meccanismo di movimento di una casella, quindi della somma di due caselle con valori uguali, della posizione finale di una casella ottenuta dopo la somma, della posizione della casella figlia generata e della cancellazione delle precedenti;
+un'altra funzione importante di Gamemanager e l'inizzializzazione di myGriglia e l'aggiornamento in modo simultaneo a GameGrid. 
+Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a simulare la pressione del tasto SHIFT e ogni volta l'ascoltatore intercetta l'evento permettendo l'esecuzione del gioco in autonomia. Quindi riassumendo GameManager si occupa delle seguenti funzioni: -meccanismi di somma e spostamento delle caselle, -aggiornamento della griglia (a livello grafico), -aggiornamento dello score, -conclusione del gioco in caso di gameOver e gameWon della partita. -aggiunta di 3 variabili boolean: gameOver e gameWon pubbliche e Griglia: myGriglia viene aggiornata in base alla situazione del gioco
 
 *MyGiocatoreAutomatico*
 Implementa l'interfaccia GiocatoreAutomatico.
@@ -77,19 +79,8 @@ LICENCE
 The project is licensed under GPL 3. See [LICENSE](https://raw.githubusercontent.com/brunoborges/fx2048/master/LICENSE)
 file for the full license.
 
-READ ME SECONDO NADIA
 
-Pr2 Project 2014
 
-Francesca Trudu - Fulgheri Nadia Jolanda
-
-Modifica dell'implementazione del gioco 2048 in modo da permettere, opzionalmente, di giocare autonomamente con un giocatore automatico.
-
-Strumenti utilizzati:
-
--github -netbeans
-
-Game2048.java La classe Game2048 contiene il main e il metodo start, implementa le funzioni e le variabili che si occupano di inizializzare e gestire l interfaccia grafica. Dalla classe in questione viene inizializzato anche un oggetto di tipo GameManager.
 
 GameManager si occupa di gestire tutto il procedimento del movimento di una casella quindi della somma di due caselle di valori uguali, della posizione finale ottenuta dopo la somma e della casella figlia appena nata e della cancellazione delle precedenti;un altra funzione importante di Gamemanager e l'inizzializzazione di myGriglia e di aggiornarla in modo simultaneo a GameGrid. Finchè non si ha il gameOver (e anche il gameWon) il Robot continua a premere shift e ogni volta l'ascoltatore intercetta l evento permettendo l esecuzione del gioco in autonomia. Quindi riassumendo GameManager si occupa delle seguenti funzioni: -meccanismi di somma e spostamento delle caselle, -aggiornamento della griglia (a livello grafico), -aggiornamento dello score, -conclusione del gioco in caso di gameOver e gameWon della partita. -aggiunta di 3 variabili boolean: gameOver e gameWon pubbliche e Griglia: myGriglia viene aggiornata in base alla situazione del gioco
 
