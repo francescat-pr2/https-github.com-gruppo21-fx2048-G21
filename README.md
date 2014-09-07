@@ -15,7 +15,15 @@ This is a fork based on the Javascript version: https://github.com/atzori/fx2048
 
 Scopo del progetto
 ==================
-Modifica dell'implementazione del gioco 2048 in modo da permettere, opzionalmente, di giocare autonomamente con un giocatore automatico. 
+Modifica dell'implementazione del gioco 2048 realizzata da B. Borges utilizzando JavaFX e Java 8, in modo da permettere, opzionalmente, di giocare autonomamente con un giocatore automatico.
+Sono stati realizzati inoltre i due file jar: <BR>
+Game2048_G21.jar (implementa il gioco modificando la versione data) 
+Game2048_player_G21.jar (implementa il giocatore automatico)
+
+Il gioco può essere avviato da terminale nel seguente modo:
+java -cp Game2048_G21.jar:Game2048_player_G21.jar game2048.Game2048
+
+La modifica del gioco permette inoltre il funzionamento anche con i giocatori automatici realizzati dagli altri gruppi e dal docente.
 
 
 
@@ -77,9 +85,9 @@ Finchè non si ha il gameOver o il gameWon, il Robot continua a simulare la pres
 *Dettagli Tecnici Implementativi*
 
 Per permettere il funzionamento corretto del giocatore automatico e quindi il meccanismo di simulazione di pressione del tasto SHIFT è stato necessario affiancare un thread "secondario" rispetto al processo principale che si occupa di gestire l'interfaccia grafica. 
-In tal modo si è potuto far in modo che i processi lavorassero in maniera parallela e non alternata.
+Ciò ha permesso che i processi lavorassero in maniera parallela e non alternata.
 
-Con la pressione del button "Giocatore Automatico" si ha la conseguente azione di creazione del thread secondario che permette di simulare la pressione del tasto SHIFT tramite un oggetto di tipo Robot;
+Con la pressione del button "Giocatore Automatico" si ha la creazione del thread secondario che permette di simulare la pressione del tasto SHIFT tramite un oggetto di tipo Robot;
 tale evento viene catturato da un ascoltatore apposito nell'addKeyHandler e se il tasto premuto è shift viene chiamato il metodo addBtnClicked che si preoccupa di richiamare il metodo prossimaMossa() del giocatoreAutomatico che restituisce un int random da 0 a 3, che verrà utilizzato dallo switch case per restituire la Direction ed essere successivamente passato al metodo move() del GameManager.
 
 
