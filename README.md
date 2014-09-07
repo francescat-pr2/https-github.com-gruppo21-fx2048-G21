@@ -66,23 +66,17 @@ GameManager si occupa, tramite il metodo "move()", di gestire tutto il meccanism
 -la posizione finale della casella figlia generata; <BR> 
 -la cancellazione delle caselle sommate. <BR>
 
-Tramite la classe Gamemanager si ha inoltre l'aggiornamento dello score, l'inizzializzazione di myGriglia e l'aggiornamento in modo simultaneo a GameGrid.
-La conclusione della partita si ha in caso di gameOver e gameWon.
+Tramite la classe Gamemanager si ha inoltre l'implementazione delle funzionalità aggiuntive del gioco come il calcolo del punteggio, l'inizzializzazione di myGriglia e l'aggiornamento in modo simultaneo a GameGrid.
+La conclusione della partita si ha in caso di gameOver e gameWon cioè quando una delle due variabili booleane assume il valore "true".
 Finchè non si ha il gameOver o il gameWon, il Robot continua a simulare la pressione del tasto SHIFT e ogni volta l'ascoltatore intercetta l'evento permettendo l'esecuzione del gioco in autonomia.
 
 
-*MyGiocatoreAutomatico*
-Implementa l'interfaccia GiocatoreAutomatico.
-Implimenta il metodo prossimaMossa dichiarato nell'interfaccia; tale metodo è utilizzato nel Game2048 su un oggetto GiocatoreAutomatico (memorizzato nella variabile myPlayer) e restituisce un int random da 0 a 3 con conseguente creazione di un valore Direction che viene passato al metodo move() del GameManager. 
-
-*MyGriglia*
-Implementa l'interfaccia 
 
 
 
+*Dettagli Tecnici Implementativi*
 
-
-Il processo principale rimane comunque l'intefaccia grafica. L'oggetto giocatore automatico viene creato tramite il suo metodo button (per attivare il giocatore automatico), la pressione del tasto shift è creato tramite un oggetto di tipo robot, che va in un thread che viene mandato in esecuzione affianco all'interfaccia grafica. Il meccanismo di simulazione di premere il tasto shift viene fatto in un altro processo (thread) rispetto al processo principale perchè cosi può lavorare in maniera simultanea rispetto all'interfaccia grafica<, infatti questo permette il suo funzionamento. Non sarebbe stata corretto in sostituzione l'utilizzo di una for o una while perchè l'aggiornamento del processo secondario non sarebbe stato simultaneo a quello dell'interfaccia grafica e quindi il tutto non sarebbe stato corretto.
+L'oggetto giocatore automatico viene creato tramite il suo metodo button (per attivare il giocatore automatico), la pressione del tasto shift è creato tramite un oggetto di tipo robot, che va in un thread che viene mandato in esecuzione affianco all'interfaccia grafica. Il meccanismo di simulazione di premere il tasto shift viene fatto in un altro processo (thread) rispetto al processo principale perchè cosi può lavorare in maniera simultanea rispetto all'interfaccia grafica<, infatti questo permette il suo funzionamento. Non sarebbe stata corretto in sostituzione l'utilizzo di una for o una while perchè l'aggiornamento del processo secondario non sarebbe stato simultaneo a quello dell'interfaccia grafica e quindi il tutto non sarebbe stato corretto.
 
 Il thread secondario serve per far gestire l'evento per premere il tasto shift riconoscerlo e richiamare alcuni metodi in un altro thread che è separato da quello principale. I due processi lavorano in maniera affiancata o meglio parallela; il secondo thread lavora in autonomia ma non blocca il processo principale come succede nelle chiamate dei metodi classici.Questo permette di gestire il giocatore automatico parallelo senza bloccare il giocatore automatico, abbiamo avuto il bisogno di gestire la chiamata al metodo move in modo automatico e parallelo al processo principale senza bloccarlo e da li è nata la nostra l'idea di un thread di un altro processo.la chiamata al metodo move avviene in questo metodo addBtnclick è l'ascoltatore che lavora nel processo principale perchè viene catturata l'evento del tasto premuto.
 
