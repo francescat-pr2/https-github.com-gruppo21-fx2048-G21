@@ -34,7 +34,6 @@ import javax.swing.Timer;
 
 
 
-
 /**
  * @author Francesca e Nadia
  */
@@ -116,7 +115,7 @@ public class Game2048 extends Application {
                   
                   //boolean di controllo per il ciclo while 
                   boolean cnt=gameManager.gameOver;
-                  //al game over del gioco l esecuzione del thread viene terminata
+                  //al game over del gioco l'esecuzione del thread viene terminata
                   while(!cnt)
                   
                   try {
@@ -130,7 +129,7 @@ public class Game2048 extends Application {
                       }
                       
                       
-                        //l oggetto Robot simula la pressione del tasto shift che verrà catturato dal listener
+                        //l'oggetto Robot simula la pressione del tasto shift che verrà catturato dal listener
                        rbt2.keyPress(KeyEvent.VK_SHIFT);
                       
                        //rilascio del tasto shift
@@ -150,8 +149,6 @@ public class Game2048 extends Application {
           });
           //il thread viene mandato in esecuzione
           t.start();
-           
-           
            
 
         } );
@@ -203,8 +200,7 @@ public class Game2048 extends Application {
     
     
     //ascoltatore dell'evento button Giocatore Automatico cliccato
-    private void addBtnClicked(){//Scene scene) {
-        
+    private void addBtnClicked(){
         
                 
                 int pross;
