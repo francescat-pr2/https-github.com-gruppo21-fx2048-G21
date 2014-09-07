@@ -1,8 +1,6 @@
 package giocatoreAutomatico;
 
 
-
-
 /*GiocatoreAutomatico:
 *permettere che il gioco sia "disaccoppiato" dal giocatore automatico e che funzioni anche con giocatori automatici di altri gruppi;
 *implementare l'interfaccia giocatoreAutomatico.GiocatoreAutomatico:
