@@ -5,8 +5,7 @@ import giocatoreAutomatico.Griglia;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
+/**MyGiocatoreAutomatico: implementa il metodo di generazione della mossa successiva.
  * @author Francesca
  * @author Nadia
  */
@@ -16,6 +15,10 @@ public class MyGiocatoreAutomatico implements GiocatoreAutomatico{
     Griglia gr;
     
 
+/**prossimamossa --> genera la scelta delle mosse che eseguirà il giocatore automatico
+ * @param Griglia
+ * @return int
+ */
     @Override
     public int prossimaMossa(Griglia g) {
         this.gr=g;
