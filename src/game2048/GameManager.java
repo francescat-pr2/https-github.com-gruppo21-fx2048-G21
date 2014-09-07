@@ -101,10 +101,6 @@ public class GameManager extends Group {
         initGameProperties();
 
         initializeGrid();
-
-        
-        
-        
         
         
 
@@ -147,7 +143,7 @@ public class GameManager extends Group {
             if (tileToBeMerged != null && tileToBeMerged.getValue().equals(tile.getValue()) && !tileToBeMerged.isMerged()) {
                 tileToBeMerged.merge(tile);
                 
-                //all aggiornamento di gameGrid viene aggiornata anche myGriglia
+                //all'aggiornamento di gameGrid viene aggiornata anche myGriglia
                 gameGrid.put(nextLocation, tileToBeMerged);
                 myGriglia.put(nextLocation, tileToBeMerged.getValue());
                 gameGrid.replace(tile.getLocation(), null);
@@ -170,7 +166,7 @@ public class GameManager extends Group {
             } else if (farthestLocation.equals(tile.getLocation()) == false) {
                 parallelTransition.getChildren().add(animateExistingTile(tile, farthestLocation));
 
-                //all aggiornamento di gameGrid viene aggiornata anche myGriglia
+                //all'aggiornamento di gameGrid viene aggiornata anche myGriglia
                 gameGrid.put(farthestLocation, tile);
                 myGriglia.put(farthestLocation, tile.getValue());
                 gameGrid.replace(tile.getLocation(), null);
