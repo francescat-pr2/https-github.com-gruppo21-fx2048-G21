@@ -72,13 +72,15 @@ Finchè non si ha il gameOver o il gameWon, il Robot continua a simulare la pres
 
 
 
-
-
 *Dettagli Tecnici Implementativi*
 
-L'oggetto giocatore automatico viene creato tramite il suo metodo button (per attivare il giocatore automatico), la pressione del tasto shift è creato tramite un oggetto di tipo robot, che va in un thread che viene mandato in esecuzione affianco all'interfaccia grafica. Il meccanismo di simulazione di premere il tasto shift viene fatto in un altro processo (thread) rispetto al processo principale perchè cosi può lavorare in maniera simultanea rispetto all'interfaccia grafica<, infatti questo permette il suo funzionamento. Non sarebbe stata corretto in sostituzione l'utilizzo di una for o una while perchè l'aggiornamento del processo secondario non sarebbe stato simultaneo a quello dell'interfaccia grafica e quindi il tutto non sarebbe stato corretto.
+Per permettere il funzionamento corretto del gioco e quindi il meccanismo di simulazione di pressione del tasto SHIFT è stato necessario affiancare un thread "secondario" rispetto al processo principale che si occupa di gestire l'interfaccia grafica. 
+In tal modo si è potuto far in modo che i processi lavorassero in maniera parallela.
 
-Il thread secondario serve per far gestire l'evento per premere il tasto shift riconoscerlo e richiamare alcuni metodi in un altro thread che è separato da quello principale. I due processi lavorano in maniera affiancata o meglio parallela; il secondo thread lavora in autonomia ma non blocca il processo principale come succede nelle chiamate dei metodi classici.Questo permette di gestire il giocatore automatico parallelo senza bloccare il giocatore automatico, abbiamo avuto il bisogno di gestire la chiamata al metodo move in modo automatico e parallelo al processo principale senza bloccarlo e da li è nata la nostra l'idea di un thread di un altro processo.la chiamata al metodo move avviene in questo metodo addBtnclick è l'ascoltatore che lavora nel processo principale perchè viene catturata l'evento del tasto premuto.
+Con la pressione del button "Giocatore Automatico" si ha la conseguente azione di creazione del thread secondario che permette di simulare la pressione del tasto SHIFT tramite un oggetto di tipo Robot, evento che viene catturato da un ascoltatore apposito addBtnClicked che implementa l'azione da eseguire ossia la chiamata al metodo del giocatoreAutomatico prossimaMossa che restituisce un int random da 0 a 3, che verrà utilizzato dallo switch case per restituire la Direction ed essere successivamente passato al metodo move() del GameManager.
+
+addBtnClicked() è il metodo che viene richiamato alla pressione del tasto shift da parte del robot nel thread, l'ascoltatore nell'addKeyHandler cattura l evento e se il tasto premuto è shift viene chiamato il metodo addBtnClicked che si preoccupa di richiamare il metodo prossimaMossa() ottenendo un valore int , sempre in addBtnClicked attraverso uno switch creiamo un valore di tipo direction in base all'int restituito dal prossimaMossa() che rappresenta la possima mossa da effettuare che viene effettivamente svolta passando la varibile direction al metodo move().
+
 
 
 
