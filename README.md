@@ -23,6 +23,9 @@ Strumenti utilizzati
 ====================
 NetBeans - <BR>
 GitHub - <BR>
+JavaFX - <BR>
+Java 8
+
 
 
 Modalità di gioco:
@@ -74,12 +77,12 @@ Finchè non si ha il gameOver o il gameWon, il Robot continua a simulare la pres
 
 *Dettagli Tecnici Implementativi*
 
-Per permettere il funzionamento corretto del gioco e quindi il meccanismo di simulazione di pressione del tasto SHIFT è stato necessario affiancare un thread "secondario" rispetto al processo principale che si occupa di gestire l'interfaccia grafica. 
-In tal modo si è potuto far in modo che i processi lavorassero in maniera parallela.
+Per permettere il funzionamento corretto del giocatore automatico e quindi il meccanismo di simulazione di pressione del tasto SHIFT è stato necessario affiancare un thread "secondario" rispetto al processo principale che si occupa di gestire l'interfaccia grafica. 
+In tal modo si è potuto far in modo che i processi lavorassero in maniera parallela e non alternata.
 
-Con la pressione del button "Giocatore Automatico" si ha la conseguente azione di creazione del thread secondario che permette di simulare la pressione del tasto SHIFT tramite un oggetto di tipo Robot, evento che viene catturato da un ascoltatore apposito addBtnClicked che implementa l'azione da eseguire ossia la chiamata al metodo del giocatoreAutomatico prossimaMossa che restituisce un int random da 0 a 3, che verrà utilizzato dallo switch case per restituire la Direction ed essere successivamente passato al metodo move() del GameManager.
+Con la pressione del button "Giocatore Automatico" si ha la conseguente azione di creazione del thread secondario che permette di simulare la pressione del tasto SHIFT tramite un oggetto di tipo Robot;
+tale evento viene catturato da un ascoltatore apposito nell'addKeyHandler e se il tasto premuto è shift viene chiamato il metodo addBtnClicked che si preoccupa di richiamare il metodo prossimaMossa() del giocatoreAutomatico che restituisce un int random da 0 a 3, che verrà utilizzato dallo switch case per restituire la Direction ed essere successivamente passato al metodo move() del GameManager.
 
-addBtnClicked() è il metodo che viene richiamato alla pressione del tasto shift da parte del robot nel thread, l'ascoltatore nell'addKeyHandler cattura l evento e se il tasto premuto è shift viene chiamato il metodo addBtnClicked che si preoccupa di richiamare il metodo prossimaMossa() ottenendo un valore int , sempre in addBtnClicked attraverso uno switch creiamo un valore di tipo direction in base all'int restituito dal prossimaMossa() che rappresenta la possima mossa da effettuare che viene effettivamente svolta passando la varibile direction al metodo move().
 
 
 
