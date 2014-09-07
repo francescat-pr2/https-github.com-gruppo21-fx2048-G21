@@ -130,8 +130,7 @@ public class Game2048 extends Application {
                       }
                       
                       
-                        //l oggetto Robot simula la pressione del tasto shift che verrà catturato
-                        //dal listener
+                        //l oggetto Robot simula la pressione del tasto shift che verrà catturato dal listener
                        rbt2.keyPress(KeyEvent.VK_SHIFT);
                       
                        //rilascio del tasto shift
@@ -139,7 +138,7 @@ public class Game2048 extends Application {
                       
                       
                       //il thread rimane in pausa 200 cent di sec
-                      Thread.sleep(200);//mezzo secondo
+                      Thread.sleep(200);
                       
                       
                   } catch (InterruptedException ex) {
@@ -203,7 +202,7 @@ public class Game2048 extends Application {
     
     
     
-    //ascoltatore dell evento button Giocatore Automatico cliccato
+    //ascoltatore dell'evento button Giocatore Automatico cliccato
     private void addBtnClicked(){//Scene scene) {
         
         
@@ -233,8 +232,7 @@ public class Game2048 extends Application {
                         System.out.println("mossa "+ pross);
                         break;
                 }
-                //viene richiamato il metodo move per eseguire la mossa in base alla direzione
-                //restituita
+                //viene richiamato il metodo move per eseguire la mossa in base alla direzione restituita
                 gameManager.move(direction);
                 
     }
