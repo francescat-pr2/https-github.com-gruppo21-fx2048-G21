@@ -74,7 +74,6 @@ La conclusione della partita si ha in caso di gameOver e gameWon cioè quando un
 Finchè non si ha il gameOver o il gameWon, il Robot continua a simulare la pressione del tasto SHIFT e ogni volta l'ascoltatore intercetta l'evento permettendo l'esecuzione del gioco in autonomia.
 
 
-
 *Dettagli Tecnici Implementativi*
 
 Per permettere il funzionamento corretto del giocatore automatico e quindi il meccanismo di simulazione di pressione del tasto SHIFT è stato necessario affiancare un thread "secondario" rispetto al processo principale che si occupa di gestire l'interfaccia grafica. 
@@ -82,8 +81,6 @@ In tal modo si è potuto far in modo che i processi lavorassero in maniera paral
 
 Con la pressione del button "Giocatore Automatico" si ha la conseguente azione di creazione del thread secondario che permette di simulare la pressione del tasto SHIFT tramite un oggetto di tipo Robot;
 tale evento viene catturato da un ascoltatore apposito nell'addKeyHandler e se il tasto premuto è shift viene chiamato il metodo addBtnClicked che si preoccupa di richiamare il metodo prossimaMossa() del giocatoreAutomatico che restituisce un int random da 0 a 3, che verrà utilizzato dallo switch case per restituire la Direction ed essere successivamente passato al metodo move() del GameManager.
-
-
 
 
 
