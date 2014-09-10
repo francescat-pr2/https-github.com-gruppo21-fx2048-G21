@@ -44,7 +44,7 @@ public class MyGriglia implements Griglia{
     
     }
     
-    //restituisce la griglia inizializzata dalla main
+    //restituisce la griglia inizializzata dal main
     public Griglia getGriglia(){
         return this;
     }
