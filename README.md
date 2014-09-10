@@ -29,9 +29,9 @@ La modifica del gioco permette inoltre il funzionamento anche con i giocatori au
 
 Strumenti utilizzati
 ====================
-NetBeans - <BR>
-GitHub - <BR>
-JavaFX - <BR>
+NetBeans - 
+GitHub - 
+JavaFX - 
 Java 8
 
 
@@ -80,6 +80,15 @@ GameManager si occupa, tramite il metodo "move()", di gestire tutto il meccanism
 Tramite la classe Gamemanager si ha inoltre l'implementazione delle funzionalità aggiuntive del gioco come il calcolo del punteggio, l'inizzializzazione di myGriglia e l'aggiornamento in modo simultaneo a GameGrid.
 La conclusione della partita si ha in caso di gameOver e gameWon cioè quando una delle due variabili booleane assume il valore "true".
 Finchè non si ha il gameOver o il gameWon, il Robot continua a simulare la pressione del tasto SHIFT e ogni volta l'ascoltatore intercetta l'evento permettendo l'esecuzione del gioco in autonomia.
+
+
+*MyGiocatoreAutomatico*
+
+Implementa l'interfaccia GiocatoreAutomatico con il metodo 
+prossimaMossa.
+Il metodo prende in ingresso un oggetto di tipo Griglia, che rappresenta la griglia 4x4 contenente la 
+situazione attuale del gioco e restituisce un int random da 0 a 3.
+Al valore restituito corrisponde una delle possibili mosse: ALTO=0; int DX=1; int BASSO=2; int SX=3.
 
 
 *Dettagli Tecnici Implementativi*
